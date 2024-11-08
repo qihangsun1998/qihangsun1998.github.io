@@ -7,6 +7,12 @@ nav_order: 4
 
 # List of attended conferences
 
+- **Exact formulae for ranks of partitions.** *International Seminar on Automorphic Forms*. Oct. 29, 2024. (Online [YouTube](https://www.youtube.com/channel/UCqXIQRPnRO0p7Nanx_mDbiQ) channel)
+
+- **Exact formulae for ranks of partitions.** Universität zu Köln, Germany. *Number Theory Seminar*. Oct. 7, 2024.
+
+- **Exact formulae for ranks of partitions.** Centre international de rencontres mathématiques (CIRM), Marseille, France. *Building Bridges: 6th EU/US Summer School  & Workshop on Automorphic Forms and Related Topics (BB6). École et Atelier sur les formes automorphes et interactions*. Sept. 10, 2024. 
+
 - **Speed talk: exact formulas for rank of partitions.** Universität zu Köln, Germany. *International Conference on Modular Forms and q-Series*. Mar. 12, 2024. 
 
 - **Lightening talk: exact formulas for rank of partitions.** Tulane University, USA. *Annual Clifford Lectures*. Feb. 25, 2023.
