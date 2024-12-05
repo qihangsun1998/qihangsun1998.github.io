@@ -9,7 +9,7 @@ nav_order: 2
 
 My research has focused on the analytic properties of arithmetic functions, applying techniques from analytic number theory, automorphic forms and the spectral theory. 
 
-[5] Vanishing properties of Kloosterman sums and Dyson's conjectures, *submitted*. [arXiv](https://arxiv.org/abs/2406.07469)
+[5] Vanishing properties of Kloosterman sums and Dyson's conjectures, accepted by *The Ramanujan Journal*. [arXiv](https://arxiv.org/abs/2406.07469)
 
 [4] Exact formulae for ranks of partitions, *submitted*. [arXiv](https://arxiv.org/abs/2406.06294) 
 
