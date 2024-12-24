@@ -13,7 +13,7 @@ My research has focused on the analytic properties of arithmetic functions, appl
 
 [4] Exact formulae for ranks of partitions, *submitted*. [arXiv](https://arxiv.org/abs/2406.06294) 
 
-[3] Uniform bounds for Kloosterman sums of half-integral weight, same-sign case, *submitted*. [arXiv](https://arxiv.org/abs/2309.05233) 
+[3] Uniform bounds for Kloosterman sums of half-integral weight, same-sign case, accepted by *Journal of Number Theory*. [arXiv](https://arxiv.org/abs/2309.05233) 
 
 [2] Uniform bounds for Kloosterman sums of half-integral weight with applications, *Forum Mathematicum*, 2024, ahead of print. [arXiv](https://arxiv.org/abs/2305.19651), [journal](https://doi.org/10.1515/forum-2023-0201)
 
