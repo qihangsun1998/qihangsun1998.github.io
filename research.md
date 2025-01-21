@@ -15,9 +15,9 @@ My research has focused on the analytic properties of arithmetic functions, appl
 
 [3] Uniform bounds for Kloosterman sums of half-integral weight, same-sign case, accepted by *Journal of Number Theory*. [arXiv](https://arxiv.org/abs/2309.05233) 
 
-[2] Uniform bounds for Kloosterman sums of half-integral weight with applications, *Forum Mathematicum*, 2024, ahead of print. [arXiv](https://arxiv.org/abs/2305.19651), [journal](https://doi.org/10.1515/forum-2023-0201)
+[2] Uniform bounds for Kloosterman sums of half-integral weight with applications, *Forum Mathematicum*, vol. 37, no. 1, 2025, pp. 75-109. [arXiv](https://arxiv.org/abs/2305.19651), [journal](https://doi.org/10.1515/forum-2023-0201)
 
-[1] Effective estimates for traces of singular moduli (with O. González),  *Research in Number Theory*, vol. 10, no. 29 (2024). [arXiv](https://arxiv.org/abs/2305.19649), [journal](https://doi.org/10.1007/s40993-024-00517-6)
+[1] Effective estimates for traces of singular moduli (with O. González),  *Research in Number Theory*, vol. 10, no. 29, 2024. [arXiv](https://arxiv.org/abs/2305.19649), [journal](https://doi.org/10.1007/s40993-024-00517-6)
 
 ----
 
