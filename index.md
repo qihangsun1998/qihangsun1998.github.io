@@ -6,7 +6,7 @@ nav_order: 1
 
 I am a CNRS postdoc at l'Université de Lille, Laboratoire Paul Painlevé, working with Dr. [Danylo Radchenko].  
 
-I get my Ph.D. in Mathematics in 2024 at the University of Illinois, Urbana-Champaign (UIUC) under the supervision of Professor [Scott Ahlgren]. 
+I got my Ph.D. in Mathematics in 2024 at the University of Illinois Urbana-Champaign (UIUC) under the supervision of Professor [Scott Ahlgren]. 
 
 I completed my bachelor in Mathematics in 2019 at Xi'an Jiaotong University (XJTU) in China. 
 
