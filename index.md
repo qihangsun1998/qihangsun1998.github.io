@@ -25,6 +25,6 @@ Research interests: automorphic form, Maass form, Kloosterman sums, analytic num
 
 [Danylo Radchenko]: https://www.danrad.net/
 [Scott Ahlgren]: https://scottahlgren.web.illinois.edu/
-[CV]: https://github.com/qihangsun1998/qihangsun1998.github.io/blob/main/files/Qihang%20Sun%20CV%20-%202025.1.24.pdf
+[CV]: https://github.com/qihangsun1998/qihangsun1998.github.io/blob/a127fab097aa3006d33561cf2961d8bf649971bd/files/Qihang%20Sun%20CV%20-%202025.3.pdf
 [Research Statement]: https://github.com/qihangsun1998/qihangsun1998.github.io/blob/main/files/Qihang-Sun-research-statement.pdf
 [Teaching Statement]: https://github.com/qihangsun1998/qihangsun1998.github.io/blob/main/files/Qihang-Sun-teaching-statement.pdf
