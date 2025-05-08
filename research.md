@@ -9,15 +9,15 @@ nav_order: 2
 
 My research has focused on the analytic properties of arithmetic functions, applying techniques from analytic number theory, automorphic forms and the spectral theory. 
 
-[5] Vanishing properties of Kloosterman sums and Dyson's conjectures, accepted by *The Ramanujan Journal*. [arXiv](https://arxiv.org/abs/2406.07469)
+[5] Vanishing properties of Kloosterman sums and Dyson's conjectures, *The Ramanujan Journal*,  vol. 66, no. 50, 2025. [arXiv](https://arxiv.org/abs/2406.07469) [journal](https://doi.org/10.1007/s11139-024-01011-4)
 
 [4] Exact formulae for ranks of partitions, *submitted*. [arXiv](https://arxiv.org/abs/2406.06294) 
 
-[3] Uniform bounds for Kloosterman sums of half-integral weight, same-sign case, accepted by *Journal of Number Theory*. [arXiv](https://arxiv.org/abs/2309.05233) 
+[3] Uniform bounds for Kloosterman sums of half-integral weight, same-sign case, *Journal of Number Theory*, vol. 274, 2025, pp. 104-139. [arXiv](https://arxiv.org/abs/2309.05233) [journal](https://doi.org/10.1016/j.jnt.2024.11.012)
 
-[2] Uniform bounds for Kloosterman sums of half-integral weight with applications, *Forum Mathematicum*, vol. 37, no. 1, 2025, pp. 75-109. [arXiv](https://arxiv.org/abs/2305.19651), [journal](https://doi.org/10.1515/forum-2023-0201)
+[2] Uniform bounds for Kloosterman sums of half-integral weight with applications, *Forum Mathematicum*, vol. 37, no. 1, 2025, pp. 75-109. [arXiv](https://arxiv.org/abs/2305.19651) [journal](https://doi.org/10.1515/forum-2023-0201)
 
-[1] Effective estimates for traces of singular moduli (with O. González),  *Research in Number Theory*, vol. 10, no. 29, 2024. [arXiv](https://arxiv.org/abs/2305.19649), [journal](https://doi.org/10.1007/s40993-024-00517-6)
+[1] (with O. González) Effective estimates for traces of singular moduli,  *Research in Number Theory*, vol. 10, no. 29, 2024. [arXiv](https://arxiv.org/abs/2305.19649) [journal](https://doi.org/10.1007/s40993-024-00517-6)
 
 ----
 
