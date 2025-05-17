@@ -44,42 +44,45 @@
 
 <div class="tabs">
   <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
-  <button class="tab-button" onclick="openTab(event, 'about')">About</button>
-  <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
-  <button class="tab-button" onclick="openTab(event, 'contact')">Contact</button>
+  <button class="tab-button" onclick="openTab(event, 'research')">Research</button>
+  <button class="tab-button" onclick="openTab(event, 'teaching')">Teaching</button>
+  <button class="tab-button" onclick="openTab(event, 'conferences')">Conferences</button>
+  <button class="tab-button" onclick="openTab(event, 'personal')">Personal</button>
 </div>
 
 <div id="home" class="tab-content active">
   <h2>Home</h2>
-  <p>This is the home tab content.</p>
+  <p>Welcome to my personal GitHub page.</p>
 </div>
 
-<div id="about" class="tab-content">
-  <h2>About Me</h2>
-  <p>This is the about tab content.</p>
+<div id="research" class="tab-content">
+  <h2>Research</h2>
+  <p>Details about my research work and projects.</p>
 </div>
 
-<div id="projects" class="tab-content">
-  <h2>My Projects</h2>
-  <p>This is the projects tab content.</p>
+<div id="teaching" class="tab-content">
+  <h2>Teaching</h2>
+  <p>Information about the courses I teach and teaching philosophy.</p>
 </div>
 
-<div id="contact" class="tab-content">
-  <h2>Contact</h2>
-  <p>This is the contact tab content.</p>
+<div id="conferences" class="tab-content">
+  <h2>Conferences</h2>
+  <p>List of conferences attended, talks given, and upcoming events.</p>
+</div>
+
+<div id="personal" class="tab-content">
+  <h2>Personal</h2>
+  <p>Some personal interests, hobbies, and background information.</p>
 </div>
 
 <script>
   function openTab(evt, tabName) {
-    // Hide all tab contents
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => content.classList.remove('active'));
 
-    // Remove active class from all tab buttons
     const tabButtons = document.querySelectorAll('.tab-button');
     tabButtons.forEach(button => button.classList.remove('active'));
 
-    // Show current tab and mark button active
     document.getElementById(tabName).classList.add('active');
     evt.currentTarget.classList.add('active');
   }
