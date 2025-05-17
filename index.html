@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My GitHub Page with Tabs</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  /* Tab container */
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+  }
+  /* Individual tab buttons */
+  .tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 16px;
+    outline: none;
+  }
+  /* Active tab */
+  .tab-button.active {
+    border-bottom: 3px solid #0078d7;
+    font-weight: bold;
+  }
+  /* Tab content */
+  .tab-content {
+    display: none;
+    padding: 20px 0;
+  }
+  /* Show the active tab content */
+  .tab-content.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<h1>Welcome to My GitHub Page</h1>
+
+<div class="tabs">
+  <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
+  <button class="tab-button" onclick="openTab(event, 'about')">About</button>
+  <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+  <button class="tab-button" onclick="openTab(event, 'contact')">Contact</button>
+</div>
+
+<div id="home" class="tab-content active">
+  <h2>Home</h2>
+  <p>This is the home tab content.</p>
+</div>
+
+<div id="about" class="tab-content">
+  <h2>About Me</h2>
+  <p>This is the about tab content.</p>
+</div>
+
+<div id="projects" class="tab-content">
+  <h2>My Projects</h2>
+  <p>This is the projects tab content.</p>
+</div>
+
+<div id="contact" class="tab-content">
+  <h2>Contact</h2>
+  <p>This is the contact tab content.</p>
+</div>
+
+<script>
+  function openTab(evt, tabName) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+
+    // Remove active class from all tab buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => button.classList.remove('active'));
+
+    // Show current tab and mark button active
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
