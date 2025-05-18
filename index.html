@@ -25,16 +25,34 @@
   .tabs {
     display: flex;
     border-bottom: 2px solid #ccc;
+    overflow-x: auto;                  /* allow horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scrollbar-width: none;             /* hide scrollbar in Firefox */
   }
-  /* Individual tab buttons */
+
+  .tabs::-webkit-scrollbar {
+    display: none;                     /* hide scrollbar in Chrome, Safari */
+  }
+
   .tab-button {
+    flex: 0 0 auto;                   /* don’t shrink, keep intrinsic width */
     padding: 10px 20px;
     cursor: pointer;
     border: none;
     background: none;
     font-size: 16px;
     outline: none;
+    white-space: nowrap;              /* prevent text wrapping inside tab */
   }
+
+  @media (max-width: 600px) {
+    .tab-button {
+      padding: 8px 12px;              /* reduce padding on small screens */
+      font-size: 14px;                /* reduce font size on small screens */
+    }
+  }  
+ 
+
   /* Active tab */
   .tab-button.active {
     border-bottom: 3px solid #0078d7;
