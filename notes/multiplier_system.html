@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qihang Sun - Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+      background-color: #f3dfc1;
+      margin: 0px 20px 60px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+
+    ol.paren-list {
+      list-style-type: none;        /* Remove default numbers */
+      padding-left: 1.5em;          /* Create space for custom markers */
+      counter-reset: item;          /* Initialize counter */
+    }
+
+    ol.paren-list > li {
+      counter-increment: item;      /* Increment counter per li */
+      position: relative;           /* Needed for ::before positioning */
+      padding-left: 2.5em;          /* add padding to push text right */
+    }
+
+    ol.paren-list > li::before {
+      content: "(" counter(item) ") "; /* Insert (1), (2), etc */
+      position: absolute;
+      left: 0;
+      width: 2em;          /* reserve space */
+      text-align: right;   /* align number right inside this width */
+    }
+
+  </style>
+
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        macros: {
+          R: "\\mathbb{R}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          N: "\\mathbb{N}",
+          H: "\\mathbb{H}",
+          C: "\\mathbb{C}",
+          SL: "\\mathrm{SL}",
+          re: "\\mathrm{Re\\,}",
+          im: "\\mathrm{Im\\,}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1],
+          lp: "\\left(",
+          rp: "\\right)",
+          lb: "\\left\\{",
+          rb: "\\right\\}"
+        }
+      }
+    };
+  </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+  <h1>Math Note 1: Multiplier Systems</h1>
+  <p>Last updated: 2025/06/12.</p>
+
+  <p>
+    In this note, we are going to define multiplier systems on any congruence subgroup of $\SL_2(\Z)$,
+    and discuss the cusps as well as the Kloosterman sums defined for cusp pairs. For simplicity,
+    we write $I=\lp\begin{smallmatrix} 1&0\\0&1\end{smallmatrix}\rp$,
+    $T=\lp\begin{smallmatrix} 1&1\\0&1 \end{smallmatrix}\rp$, and
+    $S=\lp\begin{smallmatrix} 0&-1\\1&0 \end{smallmatrix}\rp$.
+  </p>
+
+  <p>
+    We use the following well-known notations for congruence subgroups:
+    \[
+      \Gamma_0(N)=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      \lp\begin{smallmatrix} * & * \\ 0 & * \end{smallmatrix}\rp\Mod{N}\rb,
+    \]
+    \[
+      \Gamma_1(N)=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      \lp\begin{smallmatrix} 1 & * \\ 0 & 1 \end{smallmatrix}\rp \Mod{N}\rb,
+    \]
+    \[
+      \Gamma(N)=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      I \Mod{N}\rb,
+    \]
+    \[
+      \Gamma_{\Theta}=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      I \text{ or } S \Mod{2}\rb. 
+    \]
+    The last one is called the theta group, which is used in theories like Jacobi theta series. 
+  </p>
+
+    <p>
+        For $k\in \R$, we fix the argument for complex numbers: $(-\pi,\pi]$. 
+    </p>
+    <p>
+        <b>Definition 1</b>. We say that $\nu:\Gamma\rightarrow \C^\times$ is a multiplier system of weight $k$ if
+        <ol class="paren-list">
+            <li>$|\nu|=1$;</li>
+            <li>$\nu(-I)=e^{-\pi i k}$;</li>
+            <li>$\nu(\gamma_1\gamma_2)=w_k(\gamma_1,\gamma_2)\nu(\gamma_1)\nu(\gamma_2)$, where
+                \[w_k(\gamma_1,\gamma_2):=j(\gamma_2,z)^k j(\gamma_1,\gamma_2 z)^k j(\gamma_1\gamma_2,z)^{-k}. \]
+            </li>
+        </ol>
+    </p>
+    <p>
+        The weight of multiplier systems can be restricted to $[0,1)$, because a weight $k$ multiplier system is also of weight $k+2$, and its conjugation $\overline{\nu}$ is of weight $-k$. We also have the properties for $\gamma\in \Gamma$ and $n\in \Z$ such that $T^n\in \Gamma$:
+        \[\nu(\gamma)\nu(\gamma^{-1})=1,\quad \nu(\gamma T^n)=\nu(\gamma) \nu(T)^n. \]
+    </p>
+
+
+
+    <p>To be continued... </p>
+
+  <footer class="mt-10 border-t pt-4 text-sm text-gray-500">
+    <a href="../web.html#notes" class="text-blue-600 hover:underline">← Back to Notes</a>
+  </footer>
+</body>
+</html>
