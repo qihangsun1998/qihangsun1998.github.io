@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MathJax 3 minimal example with psmallmatrix</title>
+
+  <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/ams', '[tex]/amsmath']},
+      tex: {
+        packages: {'[+]': ['ams', 'amsmath']},
+        inlineMath: [['$', '$']],
+        macros: {
+          SL: "\\mathrm{SL}",
+          lb: "\\left\\{",
+          rb: "\\right\\}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1]
+        }
+      }
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <h2>MathJax 3 Test</h2>
+
+  <p>
+    Macro \verb|\SL| renders as: $ \SL_2(\mathbb{Z}) $
+  </p>
+
+  <p>
+    Using \verb|\Mod{N}| macro: $ a \equiv b \Mod{N} $
+  </p>
+
+  <p>
+    Curly braces macros: $ \lb x \in \SL_2(\mathbb{Z}) \rb $
+  </p>
+
+  <p>
+    Small matrix environment \verb|psmallmatrix|:  
+    \[
+      \begin{psmallmatrix}
+        1 & 2 \\
+        3 & 4
+      \end{psmallmatrix}
+    \]
+  </p>
+</body>
+</html>

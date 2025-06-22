@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qihang Note 2: Poincar&eacute; Series</title>
+  <style>
+    body {
+      font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+      background-color: #f3dfc1;
+      margin: 0px 20px 60px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    ol {
+      margin-top: 0;
+    }
+    ol.paren-list {
+      list-style-type: none;        /* Remove default numbers */
+      padding-left: 1.5em;          /* Create space for custom markers */
+      counter-reset: item;          /* Initialize counter */
+    }
+
+    ol.paren-list > li {
+      counter-increment: item;      /* Increment counter per li */
+      position: relative;           /* Needed for ::before positioning */
+      padding-left: 2.5em;          /* add padding to push text right */
+    }
+
+    ol.paren-list > li::before {
+      content: "(" counter(item) ") "; /* Insert (1), (2), etc */
+      position: absolute;
+      left: 0;
+      width: 2em;          /* reserve space */
+      text-align: right;   /* align number right inside this width */
+    }
+
+  </style>
+
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        macros: {
+          R: "\\mathbb{R}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          N: "\\mathbb{N}",
+          H: "\\mathbb{H}",
+          C: "\\mathbb{C}",
+          SL: "\\mathrm{SL}",
+          GL: "\\mathrm{GL}",
+          re: "\\mathrm{Re\\,}",
+          im: "\\mathrm{Im\\,}",
+          ma: "\\mathfrak{a}",
+          mb: "\\mathfrak{b}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1],
+          lp: "\\left(",
+          rp: "\\right)",
+          lb: "\\left\\{",
+          rb: "\\right\\}"
+        }
+      }
+    };
+  </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+  <h1>Math Note 2: Poincar&eacute; Series</h1>
+  <p>2025/06/22</p>
+
+  <p>
+    Last time we talked about defining a general multiplier system (allowing non-singular cusps) and Kloosterman sum on cusp pairs. In this note, we compute the Fourier expansion of Poincar&eacute; series and the Fourier coefficients will show as sums of Kloosterman sums. 
+  </p>
+
+  <p>
+    Let us fix a congruence subgroup $\Gamma$ of $\SL_2(\Z)$ and a weight $k$ multiplier system on $\Gamma$. Recall the definition of multiplier systems in <a href="multiplier_system.html">Note 1</a>. Especially, we need the notation $w_k(\gamma_1,\gamma_2)$ and for $\Gamma_{\infty}=\langle \pm T^h \rangle$, 
+    \[\nu(\sigma_{\ma} T^h \sigma_{\ma}^{-1}) = e(-\kappa_{\ma}) \quad \text{for }\kappa_{\ma}\in [0,1). \]
+  </p>
+
+  <p>
+    <b>Exercise 1</b>. Verify that $\pi:\gamma\times \H\rightarrow \C$ given by 
+    \[\pi_{\ma}(\gamma,z):=\overline{\nu}(\gamma) \overline{w_k}(\sigma_{\ma}^{-1},\gamma)j(\sigma_{\ma}^{-1}\gamma,z)^{-k} e(m_{\ma}\sigma_{\ma}^{-1}\gamma z/h)\]
+    depends only on the coset $\Gamma_{\ma}\gamma$, i.e. it is invariant if we change $\gamma$ to $\gamma_{\ma}\gamma$ for any $\gamma_{\ma}\in \Gamma_{\ma}$. Here $m_{\ma}=m-\kappa_{\ma}$ for $m\in \Z$. 
+  </p>
+
+  I would like to call $e(z/h)$ the "seed function". Depending on the question we are facing to, there might be different choices, and may change the form of $\pi_{\ma}(\gamma,z)$ and may involve other parameters. Here we discuss about the basic one $e(z/h)$.  
+
+  <p>
+    <b>Definition 2</b>. The Poincar&eacute; series on cusp $\ma$ is defined by
+    \[P_{\ma}(z):=\sum_{\gamma\in \Gamma_{\ma}\setminus \Gamma} \pi_{\ma}(\gamma,z)=\sum_{\gamma\in \Gamma_{\ma}\setminus \Gamma}  \overline{\nu}(\gamma)\overline{w_k}(\sigma_{\ma}^{-1},\gamma) j(\sigma_{\ma}^{-1}\gamma,z)^{-k} e(m_{\ma}\sigma_{\ma}^{-1}\gamma z/h). \]
+  </p>
+
+  <p>Next we compute the Fourier expansion of $P_{\ma}(z)$ at cusp $\mb$. </p>
+
+  <p>
+    <b>Exercise 3</b>. Using the notation from the previous note, show that
+    \[(P_{\ma}|_k\sigma_{\mb})(z):=j(\sigma_{\mb},z)^{-k} P_{\ma}(\sigma_{\mb} z)=\sum_{\gamma\in \Gamma_{\infty}\setminus \sigma_{\ma}^{-1}\Gamma \sigma_{\mb}} \overline{\nu_{\ma\mb}}(\gamma) j(\gamma,z)^{-k} e(m_{\ma}\gamma z/h). \]
+  </p>
+
+  <p>
+    <b>Hint</b>: note that
+    \[
+    \begin{align}
+    (\Gamma_{\ma}\setminus \Gamma)\sigma_\mb&=\lb\Gamma_{\ma}\gamma \sigma_{\mb}:\gamma\in \Gamma \rb=\lb \sigma_{\ma}\Gamma_{\infty}\sigma_{\ma}^{-1}\gamma\sigma_{\mb}:\gamma\in \Gamma \rb\\
+    &=\sigma_{\ma}(\Gamma_{\infty}\setminus \sigma_{\ma}^{-1}\Gamma \sigma_{\mb}). 
+    \end{align}
+    \]
+  </p>
+
+  <p>
+    <b>Lemma 4</b>. We have
+    \[\nu_{\ma\mb}(\gamma T^h) = \nu_{\ma\mb}(\gamma)e(-\kappa_{\mb}). \]
+  </p>
+
+  <p>
+    With the help of the above exercise and lemma, we are ready to compute the expansion now. Since $\ma =_{\Gamma}\mb$ if and only if $I\in \sigma_{\ma}^{-1}\Gamma \sigma_{\mb}$, the expansion begins with
+    \[(P_{\ma}|_k\sigma_{\mb})(z)=e(m_{\ma}z/h)\delta_{\ma\mb} +\sum_{\substack{\gamma\in \Gamma_{\infty}\setminus \sigma_{\ma}^{-1}\Gamma \sigma_{\mb}/\Gamma_{\infty } \\ \gamma=\lp\begin{smallmatrix} a&*\\c&d \end{smallmatrix}\rp \neq I}}\frac{\overline{\nu_{\ma\mb}}(\gamma)}{c^k} e\lp \frac{m_{\ma}a}{hc}\rp f\lp z+\frac dc\rp, \]
+    where
+    \[f(z):=\sum_{t\in \Z} \frac{e(t \kappa_{\mb})}{(z+th)^k} e\lp \frac{-m_{\ma}}{hc^2(z+th)}\rp \]
+    has the property that $f(z)e(\kappa_{\mb} z/h)$ has period $h$. 
+  </p>
+
+  <p>
+    So $f(z)e(\kappa_b z/h)=\sum_{n\in \Z} a(n,y) e(nx/h)$ with
+    \[a(n,y)=\frac{e^{-2\pi ny/h}}{h}\int_{-\infty+iy}^{\infty+iy} z^{-k} e\lp \frac {-m_{\ma}}{hc^2z}-\frac{n_{\mb}z}h \rp dz. \]
+
+
+    <p>We get $a(n,y)=0$ if $n_{\mb}\leq 0$.</p> 
+    <p>When $n_{\mb}>0$ and $m_{\ma}=0$, ... gives
+    \[\int_{-\infty}^\infty (y+ix)^{-k} e^{2\pi i n_{\mb} x/h }dx = 2\pi e^{-2\pi n_{\mb} y/h} (2\pi n_{\mb}/h)^{k-1}\Gamma(k)^{-1}\]
+    and hence
+    \[a(n,y)=e(-\tfrac k4)(2\pi)^{k}  n_{\mb}^{k-1} h^{-k}e^{-2\pi n_{\mb}y/h} \Gamma(k)^{-1}. \]
+    </p>
+    <p>
+    For $n_{\mb}>0$, $m_{\ma}>0$,
+    \[\begin{align} 
+      a(n,y)&= \frac {e(-\frac k4) }h \sum_{j=0}^\infty \frac 1{j!}\int_{-\infty}^{\infty} \frac{\lp-\frac{2\pi m_{\ma}}{hc^2}\rp^j}{(y+ix)^{k+j}} e^{2\pi i n_{\mb}x/h} dx\\
+      &=e(-\tfrac k4)(2\pi)^k n_{\mb}^{k-1} h^{-k} \sum_{j=0}^\infty \frac{\lp -\frac{16\pi^2 m_{\ma}n_{\mb}}{4h^2c^2}\rp^j}{j!\Gamma(j+k-1+1)}\\
+      &=\frac{2\pi e(-\tfrac k4)}{c^{1-k} h}\lp \frac nm \rp^{\frac{k-1}2} J_{k-1}\lp\frac{4\pi \sqrt{m_{\ma}n_{\mb}}}{hc}\rp. 
+    \end{align}
+    \]
+    </p>
+
+    <p>
+      Finally we get that for $m_{\ma}>0$,
+      \[(P_{\ma}|_k\sigma_{\mb})(z)=e\lp \frac{m_{\ma}z}h\rp\delta_{\ma\mb}+\frac {2\pi e(-\frac k4)}h\sum_{n_{\mb}>0}\lp\frac nm\rp^{\frac{k-1}2}\sum_{c>0}\frac{S_{\ma\mb}(m,n,c,\nu)}{c} J_{k-1} \lp\frac{4\pi \sqrt{m_{\ma}n_{\mb}}}{hc}\rp,  \]
+      where $n_{\mb}>0$ is for all $n\in \Z$ such that $n-\kappa_{\mb}>0$, and $c>0$ is for $c\in \R_+$ admissible for $\gamma=\lp\begin{smallmatrix} a&*\\c&d \end{smallmatrix}\rp \in \sigma_{\ma}^{-1}\Gamma \sigma_{\mb}$. 
+    </p>
+  </p>
+
+  <footer class="mt-10 border-t pt-4 text-sm text-gray-500">
+    <div class="flex justify-between w-full">
+      <div>
+        <a href="multiplier_system.html" class="text-blue-600 hover:underline">← Previous Note</a>
+        <a style="float: right;" href="zagier_1.5_extra.html" class="text-blue-600 hover:underline">Next Note →</a>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="mt-2">
+    <a href="../index.html#notes" class="text-blue-600 hover:underline">↩ Back to Notes</a>
+    </div>
+  </footer>
+</body>
+</html>

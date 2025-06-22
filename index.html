@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Qihang Sun (孙启航) - Personal Website</title>
+<style>
+  body {
+    font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+    background-color: #f3dfc1;
+    margin: 0px 20px 60px 20px; /* top, right, bottom, left */
+  }
+  h1 {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    margin-top: 10px;
+  }
+  ol li {
+    margin-bottom: 10px;
+  }
+  /* Tab container */
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    overflow-x: auto;                  /* allow horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scrollbar-width: none;             /* hide scrollbar in Firefox */
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;                     /* hide scrollbar in Chrome, Safari */
+  }
+
+  .tab-button {
+    flex: 0 0 auto;                   /* don’t shrink, keep intrinsic width */
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 16px;
+    outline: none;
+    white-space: nowrap;              /* prevent text wrapping inside tab */
+  }
+
+  @media (max-width: 600px) {
+    .tab-button {
+      padding: 8px 12px;              /* reduce padding on small screens */
+      font-size: 14px;                /* reduce font size on small screens */
+    }
+  }  
+ 
+
+  /* Active tab */
+  .tab-button.active {
+    border-bottom: 3px solid #0078d7;
+    font-weight: bold;
+  }
+  /* Tab content */
+  .tab-content {
+    display: none;
+    padding: 20px 0;
+  }
+  /* Show the active tab content */
+  .tab-content.active {
+    display: block;
+  }
+</style>
+</head>
+
+
+<body>
+
+<h1>孙启航 SUN, Qihang's Personal Website</h1>
+
+<div class="tabs">
+  <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
+  <button class="tab-button" onclick="openTab(event, 'research')">Research</button>
+  <button class="tab-button" onclick="openTab(event, 'conferences')">Conferences</button>
+  <button class="tab-button" onclick="openTab(event, 'notes')">Notes</button>
+  <button class="tab-button" onclick="openTab(event, 'teaching')">Teaching</button>
+  <button class="tab-button" onclick="openTab(event, 'personal')">Personal</button>
+</div>
+
+<div id="home" class="tab-content active">
+  <p>I am a CNRS postdoc at l'Université de Lille, Laboratoire Paul Painlevé, working with Dr. <a href="https://www.danrad.net/">Danylo Radchenko</a>. </p>
+
+  <p> I got my Ph.D. in Mathematics in 2024 at the University of Illinois Urbana-Champaign (UIUC) under the supervision of Professor <a href="https://scottahlgren.web.illinois.edu/">Scott Ahlgren</a>. </p>
+
+  <p> I completed my bachelor in Mathematics in 2019 at the Xi'an Jiaotong University (XJTU) in China. </p>
+
+  <p><a href="files/Qihang_Sun_CV_2025.06.pdf" target="_blank">Here is my CV</a>.</p>
+
+  <p> My email: qihangsun98 at outlook dot com. </p>
+
+  <p> <b>Research interest</b>: 
+    <ol style="list-style-type:disc;">
+    <li>Partitions and related analytic properties</li>
+    <li>Kloosterman sums</li>
+    <li>Automorphic forms</li>
+    <li>Sphere packing</li>
+    <li>...</li>
+    </ol>
+  </p>
+
+  <p>Useful links: <a href="https://orcid.org/0009-0008-5747-6807">My ORCID</a>, <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1604065">MathSciNet</a>,  <a href="https://zbmath.org/authors/sun.qihang">zbMath</a>, <a href="https://sites.google.com/view/sunqihang/"> Google site</a>, <a href="https://scholar.google.com/citations?user=15Rr24IAAAAJ">Google scholar</a>.  </p>
+</div>
+
+<div id="research" class="tab-content">
+  <h2>Publications and Preprints</h2>
+  
+  <ol reversed>
+
+    <li>
+      Fourier interpolation in dimensions 3 and 4 with real-variable Kloosterman sums.<br/>
+      in preparation. 
+    </li>
+
+    <li>
+      Vanishing properties of Kloosterman sums and Dyson's conjectures.<br/>
+      <b>The Ramanujan Journal</b>, vol. 66, no. 50, 2025. [<a href="https://arxiv.org/abs/2406.07469">arXiv</a>] [<a href="https://doi.org/10.1007/s11139-024-01011-4">journal</a>]
+    </li>
+  
+    <li>
+      Exact formulae for ranks of partitions. <br/>
+      <b>Transactions of the American Mathematical Society</b>, accepted. [<a href="https://arxiv.org/abs/2406.06294">arXiv</a>]
+    </li>
+  
+    <li>
+      Uniform bounds for Kloosterman sums of half-integral weight, same-sign case. <br/>
+      <b>Journal of Number Theory</b>, vol. 274, 2025, pp. 104-139. [<a href="https://arxiv.org/abs/2309.05233">arXiv</a>] [<a href="https://doi.org/10.1016/j.jnt.2024.11.012">journal</a>]</li>
+    </li>
+  
+    <li>
+      Uniform bounds for Kloosterman sums of half-integral weight with applications. <br/>
+      <b>Forum Mathematicum</b>, vol. 37, no. 1, 2025, pp. 75-109. [<a href="https://arxiv.org/abs/2305.19651">arXiv</a>] [<a href="https://doi.org/10.1515/forum-2023-0201">journal</a>]</li>
+    </li>
+  
+    <li>
+      (with O. González) Effective estimates for traces of singular moduli. <br/>
+      <b>Research in Number Theory</b>, vol. 10, no. 29, 2024. [<a href="https://arxiv.org/abs/2305.19649">arXiv</a>] [<a href="https://doi.org/10.1007/s40993-024-00517-6">journal</a>]</li>
+    </li>
+  
+  </ol>
+
+  <p>
+    <b> Not for publication </b>
+  </p>
+
+
+  <ol reversed>
+    <li>
+      Vanishing properties of Kloosterman sums and Dyson's conjectures, whole proof. [<a href="files/Qihang_Sun_Vanishing_KL_Sums_Whole_proof_revised_v1.pdf">PDF</a>] <br/>
+      (This is the full version of 5. above, because the whole proof is long and tedious). [<a href="https://github.com/qihangsun1998/Vanishing_Kloosterman_Sums/tree/main">GitHub repository</a>] (including the Mathematica files)</li>
+    </li>
+   
+    <li>
+      Half-integral weight Kloosterman sums and integer partitions. <br/>
+      <b>Ph.D. Thesis</b>, University of Illinois Urbana-Champaign, 2024. [<a href="files/Qihang_Sun_PhD_Thesis.pdf">PDF</a>] [<a href="https://www.ideals.illinois.edu/items/131660">IDEALS - UIUC access</a> (<a href="https://hdl.handle.net/2142/124560">permalink</a>)]
+    </li>  
+  </ol>
+
+</div>
+
+
+
+<div id="conferences" class="tab-content">
+  <h2>Conferences, seminars, etc. </h2>
+  <ol style="list-style-type: disc;">
+    <li><b>Exact formulae for ranks of partitions</b>. <i>International Seminar on Automorphic Forms</i>. Oct. 29, 2024. (Online <a href="https://www.youtube.com/channel/UCqXIQRPnRO0p7Nanx_mDbiQ">YouTube</a> channel)</li>
+    <li><b>Exact formulae for ranks of partitions</b>. Universität zu Köln, Germany. <i>Number Theory Seminar</i>. Oct. 7, 2024.</li>
+    <li><b>Exact formulae for ranks of partitions</b>. Centre international de rencontres mathématiques (CIRM), Marseille, France. <i>Building Bridges: 6th EU/US Summer School  & Workshop on Automorphic Forms and Related Topics (BB6). École et Atelier sur les formes automorphes et interactions</i>. Sept. 10, 2024. </li>
+    <li><b>Speed talk: exact formulas for rank of partitions</b>. Universität zu Köln, Germany. <i>International Conference on Modular Forms and q-Series</i>. Mar. 12, 2024. </li>
+    <li><b>Lightening talk: exact formulas for rank of partitions</b>. Tulane University, USA. <i>Annual Clifford Lectures</i>. Feb. 25, 2023.</li>
+    <li><b>Asymptotics in partitions: circle method and Kloosterman sums</b>. UIUC. <i>Number Theory Seminar</i>. Oct. 17, 2023. </li>
+    <li><b>Integer partitions and Kloosterman sums</b>. UIUC. <i>Graduate Number Theory Seminar</i>. Oct. 12, 2023.</li>
+    <li><b>Sums of Kloosterman sums with applications to partitions</b>. XJTU, Xi'an, China. <i>Number Theory Seminar</i>. Jul. 21, 2023. </li>
+    <li><b>Sums of Kloosterman sums and their applications</b>. EPF Lausanne, Switzerland. <i>Workshop on “Arithmetic Statistics in Automorphic Forms and Analytic Number Theory”</i>. Jun. 8, 2023.</li>
+    <li><b>Uniform bounds on sums of Kloosterman sums and the applications to partitions</b>. Louisiana State University, USA. <i>35th Automorphic Forms Workshop</i>. May 24, 2023.</li>
+    <li><b>Speed talk: uniform bounds on sums of Kloosterman sums analogue to Goldfeld and Sarnak</b>. Max-Planck-Institut für Mathematik, Bonn, Germany. <i>Arithmetic Statistics, Automorphic Forms and Ergodic Methods</i>. Apr. 24, 2023.</li>
+    <li><b>Uniform bounds on sums of Kloosterman sums and their application on partitions</b>. Technische Universität Darmstadt, Germany. <i>Early Number Theory Researchers Workshop</i>. Oct. 28, 2022.</li>
+    <!-- <li> <b> </b>,  , <i> </i>, </li>  -->
+  </ol>
+</div>
+
+<div id="notes" class="tab-content">
+  <h2 class="text-xl font-bold mb-4">My Math Notes</h2>
+  <h3 class="text-xl font-bold mb-4">Classical Automorphic Forms</h2>
+  <ol>
+    <li>
+      <a href="notes/multiplier_system.html" class="text-blue-600 hover:underline" target="_blank">Multiplier system</a>
+    </li>
+    <li>
+      <a href="notes/poincare_series.html" class="text-blue-600 hover:underline" target="_blank">Poincar&eacute; series</a>
+    </li>
+  </ol>
+
+  <h3 class="text-xl font-bold mb-4">Weak Maass Form, Harmonic Maass Form, etc. </h2>
+    <ol>
+      <li>
+        <a href="notes/zagier_1.5_extra.html" class="text-blue-600 hover:underline" target="_blank">An extra transformation formula for Zagier's weight 3/2 harmonic Maass form (Fricke involution)</a>
+      </li>
+    </ol>
+  <h3 class="text-xl font-bold mb-4">Pari/GP study</h2>
+    <ol>
+      <li>
+        <a href="https://pari.math.u-bordeaux.fr/" class="text-blue-600 hover:underline" target="_blank">Pari/GP official website</a>
+      </li>
+      <li>
+        <a href="notes/parigp_study_1.html" class="text-blue-600 hover:underline" target="_blank">Notation, defining function, .gp file</a>
+      </li>
+    </ol>
+</div>
+
+
+<div id="teaching" class="tab-content">
+  <h2>Teaching</h2>
+  <p>Here is my <a href="files/Qihang-Sun-teaching-statement.pdf">teaching statement</a>. </p>
+  <table>
+  <tr>
+    <td style="text-align: center;">Spring </td> <td>2024:</td>
+    <td><a href="https://courses.illinois.edu/schedule/2024/spring/MATH/453">Math 453</a> (Number Theory), TA.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Fall</td> <td>2023:</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2023/fall/MATH/220">Math 220</a> (Calculus), Recitations.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Spring </td> <td>2023:</td>
+    <td><a href="https://courses.illinois.edu/schedule/2023/spring/MATH/444">Math 444</a> (Elementary Real Analysis), TA and <a href="https://courses.illinois.edu/schedule/2023/spring/MATH/241">Math 241</a> (Calculus III), TA.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Fall </td> <td>2022:</td>
+    <td><a href="https://courses.illinois.edu/schedule/2022/fall/MATH/444">Math 444</a> (Elementary Real Analysis), TA. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Spring</td> <td>2022:</td> 
+    <td>Worked for <a href="https://netmath.illinois.edu/">NetMath®</a>. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Fall </td> <td>2021:</td>
+    <td><a href="https://courses.illinois.edu/schedule/2021/fall/MATH/241">Math 241</a> (Calculus III), Recitations. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Spring </td> <td>2021:</td>
+    <td><a href="https://courses.illinois.edu/schedule/2021/spring/MATH/234">Math 234</a> (Calculus for Business I), Recitations. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Fall</td> <td>2020:</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2020/fall/MATH/231">Math 231</a> (Calculus II), TA and worked for <a href="https://cbtf.illinois.edu/">CBTF</a>. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Spring</td> <td>2020:</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2020/spring/MATH/347">Math 347</a> (Fundamental Mathematics), TA and <a href="https://courses.illinois.edu/schedule/2020/spring/MATH/416">Math 416</a> (Abstract Linear Algebra), TA.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Fall</td> <td>2019:</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2019/fall/MATH/285">Math 285</a>-<a href="https://courses.illinois.edu/schedule/2019/fall/MATH/286">286</a> (Intro Differential Equations), TA and <a href="https://courses.illinois.edu/schedule/2019/fall/MATH/416">Math 416</a> (Abstract Linear Algebra), TA.</td>
+  </tr>
+<!--  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+-->
+</table>
+
+</div>
+
+<div id="personal" class="tab-content">
+  <h2>About me</h2>
+  <p>I like to play chess in my spare time. This is the <a href="https://www.chess.com/member/sqhby">link to my page at chess.com</a>.</p>
+  <p>I got Amateur 3 Dan in <a href="https://en.wikipedia.org/wiki/Go_%28game%29">Weiqi (围棋, Go)</a> when I was 9 (this level of 3 Dan means... an intermediate amateur I guess :). </p>
+  <p>In music I recommend Guzheng (古筝) and Guqin (古琴) as traditional Chinese instruments to listen. Here are the songs I like the most: <a href="https://www.youtube.com/watch?v=QqtJPv3rYJk">雪山春晓</a>；<a href="https://www.youtube.com/watch?v=7IhLOR6jgVE">潇湘水云</a>。</p>
+  <p>The background color is RGB #F3DFC1. </p>
+</div>
+
+
+<script>
+  function openTab(evt, tabName) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => button.classList.remove('active'));
+
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+  // On page load, open tab based on URL hash or default to 'home'
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1); // remove '#'
+    const validTabs = ['home', 'research', 'conferences', 'notes', 'teaching', 'personal'];
+  
+    if (validTabs.includes(hash)) {
+      // Find the tab button corresponding to the hash
+      const button = [...document.querySelectorAll('.tab-button')].find(btn =>
+        btn.getAttribute('onclick')?.includes(`'${hash}'`)
+      );
+      if (button) {
+        openTab({ currentTarget: button }, hash);
+      }
+    } else {
+      // Default open 'home' tab if no valid hash
+      const defaultButton = document.querySelector('.tab-button.active');
+      openTab({ currentTarget: defaultButton }, 'home');
+    }
+  });
+</script>
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+</html>

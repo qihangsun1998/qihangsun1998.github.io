@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qihang Note 1: Multiplier System</title>
+  <style>
+    body {
+      font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+      background-color: #f3dfc1;
+      margin: 0px 20px 60px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    ol {
+      margin-top: 0;
+    }
+    ol.paren-list {
+      list-style-type: none;        /* Remove default numbers */
+      padding-left: 1.5em;          /* Create space for custom markers */
+      counter-reset: item;          /* Initialize counter */
+    }
+
+    ol.paren-list > li {
+      counter-increment: item;      /* Increment counter per li */
+      position: relative;           /* Needed for ::before positioning */
+      padding-left: 2.5em;          /* add padding to push text right */
+    }
+
+    ol.paren-list > li::before {
+      content: "(" counter(item) ") "; /* Insert (1), (2), etc */
+      position: absolute;
+      left: 0;
+      width: 2em;          /* reserve space */
+      text-align: right;   /* align number right inside this width */
+    }
+
+  </style>
+
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        macros: {
+          R: "\\mathbb{R}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          N: "\\mathbb{N}",
+          H: "\\mathbb{H}",
+          C: "\\mathbb{C}",
+          SL: "\\mathrm{SL}",
+          GL: "\\mathrm{GL}",
+          re: "\\mathrm{Re\\,}",
+          im: "\\mathrm{Im\\,}",
+          ma: "\\mathfrak{a}",
+          mb: "\\mathfrak{b}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1],
+          lp: "\\left(",
+          rp: "\\right)",
+          lb: "\\left\\{",
+          rb: "\\right\\}"
+        }
+      }
+    };
+  </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+  <h1>Math Note 1: Multiplier System</h1>
+  <p>2025/06/15</p>
+
+  <p>
+    In this note, we are going to define multiplier systems on any congruence subgroup of $\SL_2(\Z)$,
+    and discuss the cusps as well as the Kloosterman sums defined for cusp pairs. We use the notation $q=e(z):=e^{2\pi i z}$. For simplicity,
+    we write $I=\lp\begin{smallmatrix} 1&0\\0&1\end{smallmatrix}\rp$,
+    $T=\lp\begin{smallmatrix} 1&1\\0&1 \end{smallmatrix}\rp$, and
+    $S=\lp\begin{smallmatrix} 0&-1\\1&0 \end{smallmatrix}\rp$. 
+  </p>
+
+  <p>
+    We use the following well-known notations for congruence subgroups:
+    \[
+      \Gamma_0(N)=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      \lp\begin{smallmatrix} * & * \\ 0 & * \end{smallmatrix}\rp\Mod{N}\rb,
+    \]
+    \[
+      \Gamma_1(N)=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      \lp\begin{smallmatrix} 1 & * \\ 0 & 1 \end{smallmatrix}\rp \Mod{N}\rb,
+    \]
+    \[
+      \Gamma(N)=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      I \Mod{N}\rb,
+    \]
+    \[
+      \Gamma_{\Theta}=\lb\gamma\in \SL_2(\Z): \gamma\equiv
+      I \text{ or } S \Mod{2}\rb. 
+    \]
+    The last one is called the theta group, which is used in theories like Jacobi theta series. 
+  </p>
+
+    <p>
+        For $k\in \R$, we fix the argument for complex numbers: $(-\pi,\pi]$. 
+    </p>
+    <p>
+        <b>Definition 1</b>. We say that $\nu:\Gamma\rightarrow \C^\times$ is a multiplier system of weight $k$ if
+        <ol class="paren-list">
+            <li>$|\nu|=1$;</li>
+            <li>$\nu(-I)=e^{-\pi i k}$;</li>
+            <li>$\nu(\gamma_1\gamma_2)=w_k(\gamma_1,\gamma_2)\nu(\gamma_1)\nu(\gamma_2)$, where
+                \[w_k(\gamma_1,\gamma_2):=j(\gamma_2,z)^k j(\gamma_1,\gamma_2 z)^k j(\gamma_1\gamma_2,z)^{-k}. \]
+            </li>
+        </ol>
+    </p>
+    Here we use the classical automorphic factor definition: $j(\gamma,z)=cz+d$. In the theory of Maass forms we use $j(\gamma,z)=\frac{cz+d}{|cz+d|}$, while it does not make difference for $w_k$. 
+    <p>
+        The weight of multiplier systems can be restricted to $[0,1)$, because a weight $k$ multiplier system is also of weight $k+2$, and its conjugation $\overline{\nu}$ is of weight $-k$. We also have the properties for $\gamma\in \Gamma$ and $n\in \Z$ such that $T^n\in \Gamma$:
+        \[\nu(\gamma)\nu(\gamma^{-1})=1,\quad \nu(\gamma T^n)=\nu(\gamma) \nu(T)^n. \]
+    </p>
+
+    <p>We want to define Kloosterman sums with multiplier systems in general. For a congruence subgroup $\Gamma$, let $\Gamma_{\mathfrak a}$ denote the stabilizer of cusp $\mathfrak a$ in $\Gamma$: 
+      \[\Gamma_{\mathfrak a}:=\lb \gamma\in \Gamma: \gamma \mathfrak a=\mathfrak a\rb. \]
+      The first example is for the cusp $\infty$: let $h\in \Z_+$ be the smallest integer such that $T^b\in \Gamma$, then
+      \[\Gamma_\infty = \langle T^h \rangle =\lb \pm \lp \begin{smallmatrix} 1 & hn \\ 0 & 1 \end{smallmatrix} \rp: n\in \Z\rb. \]
+      We call $h$ the width of cusp $\infty$. 
+    </p>
+
+    <p>The stabilizer $\Gamma_{\infty}$ is the start point for us to talk about other cusps. Indeed, we restrict our discussion in congruence subgroup $\Gamma$ to ensure that $\infty$ is a cusp of $\Gamma$ (because $\exists N\in \Z_+$ s.t. $\Gamma(N)\subseteq \Gamma$). We use the so called "scaling matrix" to "move" conditions for another cusp to cusp $\infty$ to discuss. Specifically, we define the scaling matrix $\sigma_{\mathfrak a}$ to be any matrix in $\SL_2(\R)$ satisfying the following conditions: 
+      \[\sigma_{\mathfrak a}\infty =a\quad \text{and}\quad \sigma_{\mathfrak a}^{-1}\Gamma_{\mathfrak a}\sigma_{\mathfrak a}=\Gamma_{\infty}. \]
+      We have the following important properties of scaling matrices: 
+      <ol class="paren-list">
+        <li>If $\sigma_{\mathfrak a}$ is a scaling matrix of $\mathfrak a$, then $\pm\sigma_{\mathfrak a} T^{hn}$ is also a scaling matrix of $\mathfrak a$ for any $n\in \Z$, and vice versa. In other words, the set of all scaling matrices of $\mathfrak a$ is given by $\sigma_{\mathfrak a} \Gamma_{\infty}$. 
+        </li>
+
+        <li>
+          We do not always have $\nu(T^h)=1$. Let us define $\kappa_\infty$ by 
+          \[\nu(T^h)=e(-\kappa_\infty),\quad \text{for }\kappa_\infty\in [0,1). \]
+          Let $n_\infty:=n-\kappa_\infty$ for $n\in \Z$. This shows how modular form changes the phase when $z\rightarrow z+h$, i.e. the modular form with transformation formula $f(\gamma z)=\nu(\gamma)j(\gamma,z)^k f(z)$ should have the Fourier expansion 
+          \[f(z)=\sum_{n\in \Z} a_f(n) e\lp \frac{n_\infty z}{h} \rp. \] 
+        <li>
+          The definition for width of another cusp $\ma\neq_{\Gamma}\infty$ is given by the smallest integer $h_{\ma}$ such that 
+          \[\gamma_{\ma} T^{h_{\ma}} \gamma_{\ma}^{-1} \in \Gamma_{\ma},\quad \text{where }\gamma_{\ma}\infty =\ma. \]
+          Our choice of $\sigma_{\ma}$ here ensures that $h_{\ma}=h$. Another reason might be $\Gamma(N)\subseteq \Gamma$ and $\Gamma(N)\triangleleft \SL_2(\Z). $
+        </li>
+        <li>
+          Similarly, we can define this phase change for other cusps. Let $\kappa_{\mathfrak a}$ be defined by
+          \[\nu(\sigma_{\mathfrak a} T^b \sigma_{\mathfrak a}^{-1}) = e(-\kappa_{\mathfrak a})\quad  \text{for }\kappa_{\mathfrak a}\in [0,1)\]
+          and define $n_{\mathfrak a}:=n-\kappa_{\mathfrak a}$ for $n\in \Z$, then the Fourier expansion of $f$ at cusp $\mathfrak a$ is given by
+          \[(f|_k \sigma_{\ma})(z)=j(\sigma_{\mathfrak a},z)^{-k} f(\sigma_{\mathfrak a} z)= \sum_{n\in \Z} a_{f,\mathfrak a}(n) e\lp \frac{n_{\mathfrak a} z}{h}\rp\]
+        </li>
+
+        <li>For the cusp pair $(\mathfrak a,\mathfrak b)$ of $\Gamma$, we define $\nu_{\ma\mb}(\gamma)$ for $\gamma\in \Gamma'=\sigma_{\mathfrak a}^{-1}\Gamma \sigma_{\mathfrak b}$ by
+          \[
+          \begin{align*}
+            \nu_{\mathfrak a\mathfrak b}(\gamma)&:=\nu(\sigma_{\mathfrak a}\gamma \sigma_{\mathfrak b}^{-1})w_k(\sigma_{\mathfrak a}^{-1},\sigma_{\mathfrak a}\gamma \sigma_{\mathfrak b}^{-1}) w_k(\gamma \sigma_{\mathfrak b}^{-1},\sigma_{\mathfrak b})\\
+            &=\nu(\sigma_{\mathfrak a} \gamma  \sigma_{\mathfrak b}^{-1}) \frac{w_k(\sigma_{\mathfrak a} \gamma \sigma_{\mathfrak b}^{-1},\sigma_{\mathfrak b})}{w_k(\sigma_{\mathfrak a},\gamma)}
+            \end{align*}
+          \]
+          (exercise: verify the last equation). 
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      <b>Lemma 2</b>. The expression \[\overline{\nu_{\ma\mb}(\gamma)}\, e\lp\frac{-\kappa_{\ma}a-\kappa_{\mb}d}{hc}\rp\] is well-defined under \[\gamma=\lp\begin{smallmatrix} a&b\\c&d\end{smallmatrix}\rp \in \Gamma_{\infty}\setminus\sigma_{\ma}^{-1}\Gamma\sigma_{\mb}\mathrel{/}\Gamma_{\infty}.\] 
+    </p>
+
+    <p>With this lemma, we can define our general Kloosterman sums with multiplier system:</p>
+    <p>
+      <b>Definition 3</b>. For $m,n\in \Z$ and cusps $\ma,\mb$ of $\Gamma$, if $c\in \R$ is a possible moduli (a possible "bottom-left entry") of matrices in $\sigma_{\ma}^{-1}\Gamma\sigma_{\mb}$, then we define
+      \[S_{\ma\mb}(m,n,c,\nu):=\sum_{\gamma=\lp\begin{smallmatrix} a&b\\c&d\end{smallmatrix}\rp \in \Gamma_{\infty}\setminus\sigma_{\ma}^{-1}\Gamma\sigma_{\mb}\mathrel{/}\Gamma_{\infty}} \overline{\nu_{\ma\mb}}(\gamma) e\lp \frac{m_{\ma}a+n_{\mb}d}{hc}\rp. \]
+    </p>
+
+    <p>In the next note, we will see how this general Kloosterman sum arises from Poincar&eacute; series. 
+    </p>
+
+    <br/>
+
+  <footer class="mt-10 border-t pt-4 text-sm text-gray-500">
+    <div class="flex justify-between w-full">
+      <div>
+        <!-- <a href="prev-note.html" class="text-blue-600 hover:underline">← Previous Note</a> -->
+        <u>← No previous note</u>
+        <a style="float: right;" href="poincare_series.html" class="text-blue-600 hover:underline">Next Note →</a>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="mt-2">
+    <a href="../index.html#notes" class="text-blue-600 hover:underline">↩ Back to Notes</a>
+    </div>
+  </footer>
+</body>
+</html>

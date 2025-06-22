@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qihang Note n: Title</title>
+  <style>
+    body {
+      font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+      background-color: #f3dfc1;
+      margin: 0px 20px 60px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    ol {
+      margin-top: 0;
+    }
+    ol.paren-list {
+      list-style-type: none;        /* Remove default numbers */
+      padding-left: 1.5em;          /* Create space for custom markers */
+      counter-reset: item;          /* Initialize counter */
+    }
+
+    ol.paren-list > li {
+      counter-increment: item;      /* Increment counter per li */
+      position: relative;           /* Needed for ::before positioning */
+      padding-left: 2.5em;          /* add padding to push text right */
+    }
+
+    ol.paren-list > li::before {
+      content: "(" counter(item) ") "; /* Insert (1), (2), etc */
+      position: absolute;
+      left: 0;
+      width: 2em;          /* reserve space */
+      text-align: right;   /* align number right inside this width */
+    }
+
+  </style>
+
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        macros: {
+          R: "\\mathbb{R}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          N: "\\mathbb{N}",
+          H: "\\mathbb{H}",
+          C: "\\mathbb{C}",
+          SL: "\\mathrm{SL}",
+          GL: "\\mathrm{GL}",
+          re: "\\mathrm{Re\\,}",
+          im: "\\mathrm{Im\\,}",
+          ma: "\\mathfrak{a}",
+          mb: "\\mathfrak{b}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1],
+          lp: "\\left(",
+          rp: "\\right)",
+          lb: "\\left\\{",
+          rb: "\\right\\}"
+        }
+      }
+    };
+  </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+  <h1>Math Note n: Title</h1>
+  <p>yyyy/mm/dd</p>
+
+
+  <footer class="mt-10 border-t pt-4 text-sm text-gray-500">
+    <div class="flex justify-between w-full">
+      <div>
+        <a href="prev-note.html" class="text-blue-600 hover:underline">← Previous Note</a>
+        <a style="float: right;" href="next-note.html" class="text-blue-600 hover:underline">Next Note →</a>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="mt-2">
+    <a href="../index.html#notes" class="text-blue-600 hover:underline">↩ Back to Notes</a>
+    </div>
+  </footer>
+</body>
+</html>

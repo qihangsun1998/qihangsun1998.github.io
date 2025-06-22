@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qihang Note 3: An extra transformation formula for Zagier's weight 3/2 harmonic Maass form (Fricke involution)</title>
+  <style>
+    body {
+      font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+      background-color: #f3dfc1;
+      margin: 0px 20px 60px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    ol {
+      margin-top: 0;
+    }
+    ol.paren-list {
+      list-style-type: none;        /* Remove default numbers */
+      padding-left: 1.5em;          /* Create space for custom markers */
+      counter-reset: item;          /* Initialize counter */
+    }
+
+    ol.paren-list > li {
+      counter-increment: item;      /* Increment counter per li */
+      position: relative;           /* Needed for ::before positioning */
+      padding-left: 2.5em;          /* add padding to push text right */
+    }
+
+    ol.paren-list > li::before {
+      content: "(" counter(item) ") "; /* Insert (1), (2), etc */
+      position: absolute;
+      left: 0;
+      width: 2em;          /* reserve space */
+      text-align: right;   /* align number right inside this width */
+    }
+
+  </style>
+
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        macros: {
+          R: "\\mathbb{R}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          N: "\\mathbb{N}",
+          H: "\\mathbb{H}",
+          C: "\\mathbb{C}",
+          SL: "\\mathrm{SL}",
+          GL: "\\mathrm{GL}",
+          re: "\\mathrm{Re\\,}",
+          im: "\\mathrm{Im\\,}",
+          ma: "\\mathfrak{a}",
+          mb: "\\mathfrak{b}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1],
+          lp: "\\left(",
+          rp: "\\right)",
+          lb: "\\left\\{",
+          rb: "\\right\\}"
+        }
+      }
+    };
+  </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+  <h1>Math Note 3: An extra transformation formula for Zagier's weight 3/2 harmonic Maass form (Fricke involution)</h1>
+  <p>2025/06/22</p>
+
+  <p>Let $H(n)$ be the Hurwitz class number and $\Gamma(a,z)$ be the incomplete Gamma function. Zagier's famous harmonic Maass form is given by
+  \[\mathcal{H}(z)=-\frac 1{12}+\sum_{n=1}^\infty H(n)q^n +\frac 1{4\sqrt \pi}\sum_{m=1}^\infty m\Gamma(-\tfrac 12,4\pi m^2 y)q^{-m^2}+\frac 1{8\pi \sqrt y}. \]
+  </p>
+
+  <p>
+    Let $\theta(z)=\sum_{n\in \Z}q^{n^2}$. It is known that $\mathcal{H}(z)$ is a weight $\frac 32$ harmonic Maass form of manageable growth on $(\Gamma_0(4),\nu_{\theta}^3)$, i.e. 
+  \[\mathcal{H}(\gamma z)=\nu_{\theta}(\gamma)^3 (cz+d)^{\frac 32} \mathcal{H}(z)\quad \text{for }\gamma\in \Gamma_0(4)\]
+  where $\nu_{\theta}(\gamma)=\frac{\theta(\gamma z)}{(cz+d)^{\frac 12}\theta(z)}$. It is also known that $\xi_{\frac 32} \mathcal{H}=-\frac 1{16}\theta$. 
+  </p>
+
+  <p>
+    By (Hirzebruch and Zagier, 1976), we have another expression of $\mathcal{H}$: 
+    \[\mathcal{F}(z):=-\frac 1{12}+\sum_{n=1}^{\infty} H(n)q^n\quad \text{and}\quad \mathcal{H}(z)-\mathcal{F}(z)=\frac{1+i}{16\pi} \psi(z)\]
+    where
+    \[\psi(z)=\int_{-\overline{\tau}}^{i\infty} \frac{\theta(v)}{(z+v)^{\frac 32}} dv. \]
+    Here $\mathcal{F}(z)$ is the holomorphic part of $\mathcal{H}(z)$. 
+  </p>
+  
+  <p>
+    Although we know that $\theta(z)$ is a weight $\frac 12$ modular form on $(\Gamma_0(4),\nu_{\theta})$, there is a formula for the Fricke involution of $\theta(z)$. Let $W_{4}:=\lp\begin{smallmatrix} 0&-\frac 12\\2&0 \end{smallmatrix}\rp$. We have
+    \[(\theta|_{\frac 12}W_4)(z)=(2z)^{-\frac 12} \theta \lp -\frac 1{4z} \rp=e(-\tfrac 18)\theta(z). \]
+  </p>
+
+  <p>
+    Therefore, $\theta$ is in fact living in $(\Gamma_0(4)^+,\nu_{\theta})$, where $\Gamma_0(4)^+=\langle \Gamma_0(4),W_4\rangle =\langle T,W_4\rangle$ (<b>prove it!</b>) and $\nu_{\theta}$ is extended by $\nu_{\theta}(W_4)=e(-\tfrac 18)$. 
+  </p>
+
+  <p>
+    Look back to $\psi(z)$ above. It should has transformation formula similar to $\theta$ (also written in (Hirzebruch and Zagier, 1976)).
+  </p>
+
+  <p>
+    <b>What is the transformation formula for $\mathcal{H}(z)$ under $W_4$? </b>
+  </p>
+
+  <p>
+    <b>Theorem 1</b>. We have
+    \[\lp \frac{2\tau}i \rp^{-\frac 32} \mathcal{H}\lp -\frac{1}{4\tau}\rp+\mathcal{H}(\tau)=-\frac 1{24} \theta(\tau)^3. \]
+  </p>
+
+  <p>
+    <b>Proof</b>. By the discussion under (Hirzebruch and Zagier, 1976, Theorem 2, Corollary), we can show that
+    \[(-2i\tau)^{-\frac 32}\mathcal{F}(-\tfrac 1{4\tau} ) +\mathcal{F}(\tau)= -\frac 1{24}\theta(\tau)^3-\sqrt{\frac{\tau}{8i}} \int_{\R} e(\xi^2 \tau)\frac{1+e(2\xi\tau)}{1-e(2\xi\tau)} \xi d\xi\]
+    (which comes actually from (Eichler, 1955)) and
+    \[(-2i\tau)^{-\frac 32}\psi(-\tfrac 1{4\tau} ) +\psi(\tau)=\int_{0}^{i\infty} \frac{\theta(u)}{(\tau+u)^{\frac 32}} du.\]
+    Then it suffices to prove that
+    \begin{equation}\tag{$*$}
+    \frac{1+i}{16\pi }\int_{0}^{i\infty} \frac{\theta(u)}{(\tau+u)^{\frac 32}} du =\sqrt{\frac{\tau}{8i}}\int_\R e(\xi^2 \tau) \frac{1+e(2\xi \tau)}{1-e(2\xi \tau)} \xi d\xi. \end{equation}
+    To do this, we expand the left and right hand sides. On the left side, we use $\theta(u)=1+2\sum_{n=1}^\infty e(n^2 u)$ and get
+    \[\int_0^{i\infty} (\tau+u)^{-\frac 32} du=2\tau^{-\frac 12},\quad \int_0^{i\infty} \frac{2e^{2\pi i n^2 u}}{(\tau+u)^{\frac 32}} du=2n\sqrt{2\pi} e(-\tfrac 18)e(-n^2 \tau)\Gamma(-\tfrac 12,-2\pi i n^2 \tau). \]
+    On the right side, first notice that the integrand is an even function. When $\xi>0$ and $\im z>0$, we have $|e(2\xi z)| < 1 $ and we can expand the fraction as
+    \[\frac{1+e(2\xi\tau)}{1-e(2\xi\tau)}=1+2\sum_{n=1}^\infty e(2n\xi \tau). \]
+	  Hence we get
+	  \[\int_{\R} e(\xi^2 \tau) \xi d\xi=2\int_0^\infty e(\xi^2\tau) \xi d\xi=\frac{i}{2\pi \tau}\]
+	  and
+	  \[4\int_{0}^\infty e^{2\pi i \xi^2 \tau + 4\pi i n \xi \tau} \xi d\xi=ne^{-2\pi i n^2 \tau}(-2\pi i \tau)^{-\frac 12}\Gamma(-\tfrac 12,-2\pi i n^2 \tau). \]
+    The equation ($*$) is then proved by comparing the $n$-th terms and we have finished the proof of Theorem 1. 
+  </p>
+  
+  <footer class="mt-10 border-t pt-4 text-sm text-gray-500">
+    <div class="flex justify-between w-full">
+      <div>
+        <a href="poincare_series.html" class="text-blue-600 hover:underline">← Previous Note</a>
+        <a style="float: right;" href="next-note.html" class="text-blue-600 hover:underline">Next Note →</a>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="mt-2">
+    <a href="../index.html#notes" class="text-blue-600 hover:underline">↩ Back to Notes</a>
+    </div>
+  </footer>
+</body>
+</html>
