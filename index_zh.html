@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>孙启航 个人主页</title>
+<style>
+  body {
+    font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+    background-color: #f3dfc1;
+    margin: 0px 20px 60px 20px; /* top, right, bottom, left */
+  }
+  h1 {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    margin-top: 10px;
+  }
+  ol li {
+    margin-bottom: 10px;
+  }
+  /* Tab container */
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    overflow-x: auto;                  /* allow horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scrollbar-width: none;             /* hide scrollbar in Firefox */
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;                     /* hide scrollbar in Chrome, Safari */
+  }
+
+  .tab-button {
+    flex: 0 0 auto;                   /* don’t shrink, keep intrinsic width */
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 16px;
+    outline: none;
+    white-space: nowrap;              /* prevent text wrapping inside tab */
+    font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+  }
+
+  @media (max-width: 600px) {
+    .tab-button {
+      padding: 8px 12px;              /* reduce padding on small screens */
+      font-size: 14px;                /* reduce font size on small screens */
+    }
+  }  
+ 
+
+  /* Active tab */
+  .tab-button.active {
+    border-bottom: 3px solid #0078d7;
+    font-weight: bold;
+  }
+  /* Tab content */
+  .tab-content {
+    display: none;
+    padding: 20px 0;
+  }
+  /* Show the active tab content */
+  .tab-content.active {
+    display: block;
+  }
+
+  .profile-photo {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 20px;
+  }
+ 
+
+</style>
+</head>
+
+
+<body>
+
+<h1 style="display: flex; justify-content: space-between; align-items: center;">
+  孙启航 个人主页
+  <a href="index.html" style="margin-left: auto; font-size: 14px; padding: 5px 10px; text-decoration: none; border: 1px solid #ccc; border-radius: 4px;">
+    English
+  </a>
+</h1>
+
+<div class="tabs">
+  <button class="tab-button active" onclick="openTab(event, 'home')">主页</button>
+  <button class="tab-button" onclick="openTab(event, 'research')">科研</button>
+  <button class="tab-button" onclick="openTab(event, 'conferences')">参会</button>
+  <button class="tab-button" onclick="openTab(event, 'notes')">笔记</button>
+  <button class="tab-button" onclick="openTab(event, 'teaching')">教学</button>
+  <button class="tab-button" onclick="openTab(event, 'personal')">其他</button>
+</div>
+
+<div id="home" class="tab-content active">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
+    
+    <div style="flex: 1; min-width: 300px;">
+      <p>我目前是法国国家科学研究中心（CNRS）的博士后，工作单位为里尔大学 Paul Painlevé 实验室（数学系）。我的博士后合作导师是 <a href="https://www.danrad.net/">Danylo Radchenko</a> 博士。</p>
+
+      <p>2024 年，我于美国伊利诺伊大学香槟分校（UIUC）获得数学博士学位。我的博士导师是 <a href="https://scottahlgren.web.illinois.edu/">Scott Ahlgren</a> 先生。</p>
+
+      <p>2019 年，我本科毕业于西安交通大学数学试验班，获得理学学士学位。我的本科毕业设计指导老师是<a href="https://gr.xjtu.edu.cn/web/jjx323">贾骏雄</a>教授。</p>
+
+      <p>这里是我的<a href="files/Qihang_Sun_CV_2025.06.pdf" target="_blank">中文简历</a>。</p>
+
+      <p>邮箱：qihangsun98 [at] outlook [dot] com.</p>
+
+      <p><b>研究兴趣：</b></p>
+        <ol style="list-style-type:disc;">
+          <li>整数分拆函数及其解析性质</li>
+          <li>Kloosterman 和</li>
+          <li>自守形式</li>
+          <li>球密堆积问题</li>
+          <li>……</li>
+        </ol>
+     
+
+      <p>其他链接：<a href="https://orcid.org/0009-0008-5747-6807">ORCID</a>, <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1604065">MathSciNet</a>, <a href="https://zbmath.org/authors/sun.qihang">zbMath</a>, <a href="https://sites.google.com/view/sunqihang/">Google site</a>, <a href="https://scholar.google.com/citations?user=15Rr24IAAAAJ">Google scholar</a>.</p>
+    </div>
+
+    <div>
+        <img src="files/profile.jpg" alt="Profile photo" class="profile-photo"/>
+    </div>
+  </div>
+</div>
+
+
+<div id="research" class="tab-content">
+  <h2>论文和预印本</h2>
+  
+  <ol reversed>
+
+    <li>
+      Fourier interpolation in dimensions 3 and 4 with real-variable Kloosterman sums.<br/>
+      准备投稿
+    </li>
+
+    <li>
+      Vanishing properties of Kloosterman sums and Dyson's conjectures.<br/>
+      <b>The Ramanujan Journal</b>, vol. 66, no. 50, 2025. [<a href="https://arxiv.org/abs/2406.07469">arXiv</a>] [<a href="https://doi.org/10.1007/s11139-024-01011-4">journal</a>]
+    </li>
+  
+    <li>
+      Exact formulae for ranks of partitions. <br/>
+      <b>Transactions of the American Mathematical Society</b>, accepted. [<a href="https://arxiv.org/abs/2406.06294">arXiv</a>]
+    </li>
+  
+    <li>
+      Uniform bounds for Kloosterman sums of half-integral weight, same-sign case. <br/>
+      <b>Journal of Number Theory</b>, vol. 274, 2025, pp. 104-139. [<a href="https://arxiv.org/abs/2309.05233">arXiv</a>] [<a href="https://doi.org/10.1016/j.jnt.2024.11.012">journal</a>]</li>
+    </li>
+  
+    <li>
+      Uniform bounds for Kloosterman sums of half-integral weight with applications. <br/>
+      <b>Forum Mathematicum</b>, vol. 37, no. 1, 2025, pp. 75-109. [<a href="https://arxiv.org/abs/2305.19651">arXiv</a>] [<a href="https://doi.org/10.1515/forum-2023-0201">journal</a>]</li>
+    </li>
+  
+    <li>
+      (with O. González) Effective estimates for traces of singular moduli. <br/>
+      <b>Research in Number Theory</b>, vol. 10, no. 29, 2024. [<a href="https://arxiv.org/abs/2305.19649">arXiv</a>] [<a href="https://doi.org/10.1007/s40993-024-00517-6">journal</a>]</li>
+    </li>
+  
+  </ol>
+
+  <p>
+    <b>非投稿文章</b>
+  </p>
+
+
+  <ol reversed>
+    <li>
+      Vanishing properties of Kloosterman sums and Dyson's conjectures, whole proof. [<a href="files/Qihang_Sun_Vanishing_KL_Sums_Whole_proof_revised_v1.pdf">PDF</a>] <br/>
+      （这是上面文章 5 的证明全文，因为证明中有很多重复的相似步骤，投稿时省略了） [<a href="https://github.com/qihangsun1998/Vanishing_Kloosterman_Sums/tree/main">GitHub repository</a>] (包含 Mathematica 文件)</li>
+    </li>
+   
+    <li>
+      Half-integral weight Kloosterman sums and integer partitions. <br/>
+      <b>博士毕业论文</b>，伊利诺伊大学香槟分校，2024. [<a href="files/Qihang_Sun_PhD_Thesis.pdf">PDF</a>] [<a href="https://www.ideals.illinois.edu/items/131660">IDEALS - UIUC 毕业论文档案馆</a> (<a href="https://hdl.handle.net/2142/124560">永久链接</a>)]
+    </li>  
+  </ol>
+
+</div>
+
+
+
+<div id="conferences" class="tab-content">
+  <h2>会议、讨论班等学术活动</h2>
+  <ol style="list-style-type: disc;">
+    <li><b>Exact formulae for ranks of partitions</b>. <i>International Seminar on Automorphic Forms</i>. Oct. 29, 2024. (Online <a href="https://www.youtube.com/channel/UCqXIQRPnRO0p7Nanx_mDbiQ">YouTube</a> channel)</li>
+    <li><b>Exact formulae for ranks of partitions</b>. Universität zu Köln, Germany. <i>Number Theory Seminar</i>. Oct. 7, 2024.</li>
+    <li><b>Exact formulae for ranks of partitions</b>. Centre international de rencontres mathématiques (CIRM), Marseille, France. <i>Building Bridges: 6th EU/US Summer School  & Workshop on Automorphic Forms and Related Topics (BB6). École et Atelier sur les formes automorphes et interactions</i>. Sept. 10, 2024. </li>
+    <li><b>Speed talk: exact formulas for rank of partitions</b>. Universität zu Köln, Germany. <i>International Conference on Modular Forms and q-Series</i>. Mar. 12, 2024. </li>
+    <li><b>Lightning talk: exact formulas for rank of partitions</b>. Tulane University, USA. <i>Annual Clifford Lectures</i>. Feb. 25, 2023.</li>
+    <li><b>Asymptotics in partitions: circle method and Kloosterman sums</b>. UIUC. <i>Number Theory Seminar</i>. Oct. 17, 2023. </li>
+    <li><b>Integer partitions and Kloosterman sums</b>. UIUC. <i>Graduate Number Theory Seminar</i>. Oct. 12, 2023.</li>
+    <li><b>Sums of Kloosterman sums with applications to partitions</b>. XJTU, Xi'an, China. <i>Number Theory Seminar</i>. Jul. 21, 2023. </li>
+    <li><b>Sums of Kloosterman sums and their applications</b>. EPF Lausanne, Switzerland. <i>Workshop on “Arithmetic Statistics in Automorphic Forms and Analytic Number Theory”</i>. Jun. 8, 2023.</li>
+    <li><b>Uniform bounds on sums of Kloosterman sums and the applications to partitions</b>. Louisiana State University, USA. <i>35th Automorphic Forms Workshop</i>. May 24, 2023.</li>
+    <li><b>Speed talk: uniform bounds on sums of Kloosterman sums analogue to Goldfeld and Sarnak</b>. Max-Planck-Institut für Mathematik, Bonn, Germany. <i>Arithmetic Statistics, Automorphic Forms and Ergodic Methods</i>. Apr. 24, 2023.</li>
+    <li><b>Uniform bounds on sums of Kloosterman sums and their application on partitions</b>. Technische Universität Darmstadt, Germany. <i>Early Number Theory Researchers Workshop</i>. Oct. 28, 2022.</li>
+    <!-- <li> <b> </b>,  , <i> </i>, </li>  -->
+  </ol>
+</div>
+
+<div id="notes" class="tab-content">
+  <h2 class="text-xl font-bold mb-4">我的数学笔记</h2>
+  <h3 class="text-xl font-bold mb-4">古典自守形式</h3>
+  <ol>
+    <li>
+      <a href="notes/multiplier_system.html" class="text-blue-600 hover:underline" target="_blank">Multiplier system</a>
+    </li>
+    <li>
+      <a href="notes/poincare_series.html" class="text-blue-600 hover:underline" target="_blank">Poincar&eacute; series</a>
+    </li>
+  </ol>
+
+  <h3 class="text-xl font-bold mb-4">弱 Maass 形式、调和 Maass 形式等 </h3>
+    <ol>
+      <li>
+        <a href="notes/zagier_1.5_extra.html" class="text-blue-600 hover:underline" target="_blank">An extra transformation formula for Zagier's weight 3/2 harmonic Maass form (Fricke involution)</a>
+      </li>
+      <li>
+        <a href="notes/hejhal_int.html">A modern proof of an integral formula by Hejhal</a>
+      </li>
+    </ol>
+  <h3 class="text-xl font-bold mb-4">Pari/GP 学习</h3>
+    <ol>
+      <li>
+        <a href="https://pari.math.u-bordeaux.fr/" class="text-blue-600 hover:underline" target="_blank">Pari/GP 官方网站</a>
+      </li>
+      <li>
+        <a href="notes/parigp_study_1.html" class="text-blue-600 hover:underline" target="_blank">Notation, defining function, .gp file</a>
+      </li>
+    </ol>
+</div>
+
+
+<div id="teaching" class="tab-content">
+  <h2>教学经历</h2>
+  <p>这是我的<a href="files/Qihang-Sun-teaching-statement.pdf">教学陈述（英文）</a>. </p>
+  <table>
+  <tr>
+    <td style="text-align: center;">2024</td> <td>春：</td>
+    <td><a href="https://courses.illinois.edu/schedule/2024/spring/MATH/453">Math 453</a> (数论), TA.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2023</td> <td>秋：</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2023/fall/MATH/220">Math 220</a> (微积分), Recitations.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2023</td> <td>春：</td>
+    <td><a href="https://courses.illinois.edu/schedule/2023/spring/MATH/444">Math 444</a> (实分析初步), TA and <a href="https://courses.illinois.edu/schedule/2023/spring/MATH/241">Math 241</a> (微积分 3), TA.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2022</td> <td>秋：</td>
+    <td><a href="https://courses.illinois.edu/schedule/2022/fall/MATH/444">Math 444</a> (实分析初步), TA. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2022</td> <td>春：</td> 
+    <td><a href="https://netmath.illinois.edu/">NetMath®</a>. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2021</td> <td>秋：</td>
+    <td><a href="https://courses.illinois.edu/schedule/2021/fall/MATH/241">Math 241</a> (微积分 3), Recitations. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2021</td> <td>春：</td>
+    <td><a href="https://courses.illinois.edu/schedule/2021/spring/MATH/234">Math 234</a> (微积分 - 商科 1), Recitations. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2020</td> <td>秋</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2020/fall/MATH/231">Math 231</a> (微积分 2), TA and worked for <a href="https://cbtf.illinois.edu/">CBTF</a>. </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2020</td> <td>春：</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2020/spring/MATH/347">Math 347</a> (数学基础), TA and <a href="https://courses.illinois.edu/schedule/2020/spring/MATH/416">Math 416</a> (抽象线性代数), TA.</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">2019</td> <td>秋：</td> 
+    <td><a href="https://courses.illinois.edu/schedule/2019/fall/MATH/285">Math 285</a>-<a href="https://courses.illinois.edu/schedule/2019/fall/MATH/286">286</a> (微分方程入门), TA and <a href="https://courses.illinois.edu/schedule/2019/fall/MATH/416">Math 416</a> (抽象线性代数), TA.</td>
+  </tr>
+<!--  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+-->
+</table>
+
+</div>
+
+<div id="personal" class="tab-content">
+  <h2>个人爱好</h2>
+  <p>我喜欢下国际象棋，这是<a href="https://www.chess.com/member/sqhby">我在chess.com的主页</a>。</p>
+  <p>我9岁时围棋打到了业余3段。</p>
+  <p>我最喜欢的古筝曲是《雪山春晓》，最喜欢的古琴曲是《潇湘水云》。</p>
+  <p>我的主页背景颜色是 RGB #F3DFC1. </p>
+</div>
+
+
+<script>
+  function openTab(evt, tabName) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => button.classList.remove('active'));
+
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+  // On page load, open tab based on URL hash or default to 'home'
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1); // remove '#'
+    const validTabs = ['home', 'research', 'conferences', 'notes', 'teaching', 'personal'];
+  
+    if (validTabs.includes(hash)) {
+      // Find the tab button corresponding to the hash
+      const button = [...document.querySelectorAll('.tab-button')].find(btn =>
+        btn.getAttribute('onclick')?.includes(`'${hash}'`)
+      );
+      if (button) {
+        openTab({ currentTarget: button }, hash);
+      }
+    } else {
+      // Default open 'home' tab if no valid hash
+      const defaultButton = document.querySelector('.tab-button.active');
+      openTab({ currentTarget: defaultButton }, 'home');
+    }
+  });
+</script>
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+</html>
