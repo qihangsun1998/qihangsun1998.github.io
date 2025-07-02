@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qihang Note 4: A modern proof of an integral formula by Hejhal</title>
+  <style>
+    body {
+      font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+      background-color: #f3dfc1;
+      margin: 0px 20px 60px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    ol {
+      margin-top: 0;
+    }
+    ol.paren-list {
+      list-style-type: none;        /* Remove default numbers */
+      padding-left: 1.5em;          /* Create space for custom markers */
+      counter-reset: item;          /* Initialize counter */
+    }
+
+    ol.paren-list > li {
+      counter-increment: item;      /* Increment counter per li */
+      position: relative;           /* Needed for ::before positioning */
+      padding-left: 2.5em;          /* add padding to push text right */
+    }
+
+    ol.paren-list > li::before {
+      content: "(" counter(item) ") "; /* Insert (1), (2), etc */
+      position: absolute;
+      left: 0;
+      width: 2em;          /* reserve space */
+      text-align: right;   /* align number right inside this width */
+    }
+
+  </style>
+
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        macros: {
+          R: "\\mathbb{R}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          N: "\\mathbb{N}",
+          H: "\\mathbb{H}",
+          C: "\\mathbb{C}",
+          SL: "\\mathrm{SL}",
+          GL: "\\mathrm{GL}",
+          re: "\\mathrm{Re\\,}",
+          im: "\\mathrm{Im\\,}",
+          sgn: "\\mathrm{sgn}",
+          ma: "\\mathfrak{a}",
+          mb: "\\mathfrak{b}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1],
+          lp: "\\left(",
+          rp: "\\right)",
+          lb: "\\left\\{",
+          rb: "\\right\\}"
+        }
+      }
+    };
+  </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+  <h1>Math Note 4: A modern proof of an integral formula by Hejhal</h1>
+  <p>2025/07/03</p>
+
+  <p>
+    Let $M_{\kappa,\mu}(z)$ and $W_{\kappa,\mu}(z)$ be the $M$- and $W$-Whittaker functions, respectively, as defined at <a href="https://dlmf.nist.gov/13.14">DLMF$\S$13.14</a>. 
+    In the theory of Maass-Poincar&eacute; series, by constructing
+    \[\varphi_{s,k}(mz):=|4\pi my|^{-\frac k2} M_{\frac k2 \sgn(m),s-\frac 12}(4\pi |m|y)e(mx)\]
+    and summing 
+    \[P_m(z):=\sum_{\gamma\in \Gamma_{\infty}\setminus \Gamma} \overline{\nu}(\gamma) (\varphi_{s,k}|_k \gamma)(z), \]
+    we will facing the following integral formula when computing the Fourier expansion of $P_m$: 
+    \[
+    \frac 1{\Gamma(2s)}\int_{-\infty}^\infty e\lp\frac{cu}{1+u^2}+\alpha u \rp M_{\ell,s-\frac 12}\lp \frac{4\pi c}{1+u^2} \rp \lp\frac{1-iu}{1+iu}\rp^\ell du=\]
+    \[\left\{\begin{array}{ll}
+    \frac{2\pi}{\Gamma(s+\ell)} W_{\ell,s-\frac12}(4\pi \alpha) \left|\frac c\alpha\right|^{\frac12} J_{2s-1}(4\pi\sqrt{\alpha c}),& \alpha>0;\\
+    \frac{2\pi^{1+s}c^s}{(s-\frac12)\Gamma(s-\ell)\Gamma(s+\ell)}, & \alpha=0;\\
+    \frac{2\pi}{\Gamma(s-\ell)} W_{-\ell,s-\frac12}(4\pi \alpha) \left|\frac c\alpha\right|^{\frac12} I_{2s-1}(4\pi\sqrt{\alpha c}),& \alpha<0. 
+    \end{array}
+    \right.
+    \]
+    The equation above is recorded in Proposition 3.6 of [Jeon, Kang, Kim, <i>Weak Maass-Poincar&eacute; series and weight $3/2$ mock modular forms</i>, 2013], which actually cite from Lemma 5.5 in [Hejhal, <i>The Selberg Trace Formula for $\mathrm{PSL}(2,\R)$</i>, volume 2, 1983]. 
+  </p>
+
+  <p>
+    Today we revisit Hejhal's proof on this formula with the help of modern table of special functions in <a href="https://dlmf.nist.gov/">DLMF</a>. A kind reminder is that 
+    \[\Phi(a,b,z)=M(a,b,z),\quad \Psi(a,b,z)=U(a,b,z), \]
+    \[G(z)=z^s e^{-\frac z2} \Phi(s-\ell,2s,z)\Gamma(2s)^{-1}=M_{\ell,s-\frac 12}(z)\Gamma(2s)^{-1},\]
+    and
+    \[(4\pi |\alpha|)^s e^{-2\pi |\alpha|} \Psi(s\pm \ell,2s,4\pi |\alpha|)= W_{\mp \ell,s-\frac 12}(4\pi |\alpha|), \]
+    where the left-hand-sides are functions in Hejhal's book and the right-hand-sides $M$ and $U$ functions are <a href="https://dlmf.nist.gov/13.2">Kummer functions in DLMF</a>. 
+  </p>
+
+  <p>
+    Following Hejhal's proof, we first set
+    \[F(c):=\int_{-\infty}^\infty e\lp\frac{cu}{1+u^2}\rp M_{\ell,s-\frac 12}\lp \frac{4\pi c}{1+u^2} \rp \lp\frac{1-iu}{1+iu}\rp^\ell e(\alpha u) du.\]
+    The goal is to find a differential equation of $F$, e.g. $F''(c)+\cdots F(c)=0$. So we need to take the second derivative of $F$. Note that there are two functions including $c$ and we need $(uv)''=u''+v''+2u'v'$. 
+  </p>
+
+  <p>
+    For simplicity, we denote $M'(u)$ for the derivative $\frac{d}{du} M_{\ell,s-\frac12}(u)$. Since $M_{\ell,s-\frac12}(u)$ satisfies the <a href="https://dlmf.nist.gov/13.14#E1">differential equation</a> (which is its definition), we have
+    \[\frac{d^2}{du^2} M_{\ell,s-\frac12}(u)=\lp\frac 14-\frac \ell u -\frac{s(1-s)}{u^2}\rp M_{\ell,s-\frac12}(u). \]
+  </p>
+
+  <p>
+    Now we can compute $F''(c)$. 
+    \[F''(c)=\int_{-\infty}^\infty \lp\frac{-4\pi^2 u^2}{(1+u^2)^2}+\frac{4\pi^2}{(1+u^2)^2}-\frac{4\pi \ell}{c(1+u^2)}-\frac{s(1-s)}{c^2}\rp e\lp\frac{cu}{1+u^2}\rp M_{\ell,s-\frac 12}\lp \frac{4\pi c}{1+u^2} \rp \lp\frac{1-iu}{1+iu}\rp^\ell e(\alpha u)du + \int_{-\infty}^\infty \lp\frac{16\pi^2 i u}{(1+u^2)^2}\rp e\lp\frac{cu}{1+u^2}\rp M_{\ell,s-\frac 12}'\lp \frac{4\pi c}{1+u^2} \rp \lp\frac{1-iu}{1+iu}\rp^\ell e(\alpha u)du. \]
+    Such a long equation! 
+  </p>
+
+  <p>
+    Note that $\frac{1-u^2}{(1+u^2)^2}=\frac{d}{du} \frac{u}{1+u^2}$ and $\frac{d}{du} \lp\frac{1-iu}{1+iu}\rp^\ell=\frac{-2i\ell}{1+u^2} \lp\frac{1-iu}{1+iu}\rp^\ell$ (also true for $\ell\neq 0$). These results give the first integral above: 
+    \[F''(c)+\frac{s(1-s)}{c^2} F(c)=\frac{-2\pi i}{c}\int_{-\infty}^\infty \frac{d}{du} \lp e\lp\frac{cu}{1+u^2} \rp \lp\frac{1-iu}{1+iu}\rp^\ell \rp M_{\ell,s-\frac 12}\lp \frac{4\pi c}{1+u^2} \rp  e(\alpha u)du + \int_{-\infty}^\infty \lp\frac{16\pi^2 i u}{(1+u^2)^2}\rp e\lp\frac{cu}{1+u^2}\rp M_{\ell,s-\frac 12}'\lp \frac{4\pi c}{1+u^2} \rp \lp\frac{1-iu}{1+iu}\rp^\ell e(\alpha u)du. \]
+  </p>
+
+  <p>
+    For the last integral, we have the derivative $\frac{d}{du} M_{\ell,s-\frac 12}\lp \frac{4\pi c}{1+u^2}\rp =\frac{-8\pi cu}{(1+u^2)^2} M_{\ell,s-\frac 12}'\lp \frac{4\pi c}{1+u^2}\rp$. By multiplying $\frac{-2\pi i}c$, it gives exactly the last integral. Therefore, we ended up with
+    \[F''(c)+\frac{s(1-s)}{c^2} F(c)=\frac{-2\pi i}{c}\int_{-\infty}^\infty \frac{d}{du} \lp e\lp\frac{cu}{1+u^2} \rp \lp\frac{1-iu}{1+iu}\rp^\ell M_{\ell,s-\frac 12}\lp \frac{4\pi c}{1+u^2}\rp \rp   e(\alpha u)du. \]
+  </p>
+
+  <p>
+    Applying the partial integral on the right hand side above (and the integrand has to be $0$ at infinities), we get the key step in Hejhal's book: 
+    \[F''(c)+\lp \frac{4\pi^2 \alpha}c+\frac{s(1-s)}{c^2}\rp F(c)=0. \]
+  </p>
+
+  <p>
+    The next step in Hejhal's book is by citing G. N. Watson's book <i>A Treatise on the Theory of Bessel Functions</i> in 1944. We shall find this in some modern resource. For example, we cite <a href="https://dlmf.nist.gov/10.13#E1">DLMF(10.13.2)</a> that the solution $w(z)$ for
+    \[w''+\lp \frac{\lambda^2}{4z}-\frac{\nu^2-1}{4z^2}\rp w=0\]
+    is $w(z)=z^{\frac 12} \mathcal{C}_\nu(\lambda z^{\frac 12})$, where $\mathcal{C}_\nu$ stands for any linear combination of $J_\nu$ and $Y_\nu$ (Bessel functions). 
+  </p>
+
+  <h3>4.1. When $\alpha\neq 0$.</h3>
+  <p>
+    We apply the above equation for $\lambda=4\pi\sqrt{\alpha}$ (if $\alpha>0$), $\lambda= i 4\pi\sqrt{|\alpha|} $ (if $\alpha < 0 $), and $\nu=2s-1$ to solve
+    \[F(c)=\left\{ 
+      \begin{array}{ll} 
+        Ac^{\frac 12} J_{2s-1}(4\pi\sqrt{\alpha c})+Bc^{\frac 12} Y_{2s-1}(4\pi\sqrt{\alpha c}), & \alpha>0;\\
+        A' c^{\frac 12} I_{2s-1}(4\pi\sqrt{|\alpha| c})+B' c^{\frac 12} K_{2s-1}(4\pi\sqrt{|\alpha| c}), & \alpha < 0;
+      \end{array}
+      \right.
+      \]
+      There are some basic facts about $J,Y,I,K$ Bessel functions: $Y_\nu$ is a linear combination of $J_{\pm\nu}$, $K_\nu$ is a linear combination of $I_{\pm\nu}$, and $I_\nu(x)=e^{-\nu\pi i/2}J_{\nu}(ix)$. So we only need to determine the above constants. Moreover, we will sove the $\alpha=0$ case later. 
+  </p>
+
+  <p>
+    In order to determine $A,B,A',B'$ above, Hejhal let $c\rightarrow 0^+$. We can study from <a href="https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/04%3A_Series_Solutions/4.04%3A_The_Frobenius_Method/4.4.02%3A_Roots_of_Indicial_Equation">this post</a> and find that the indicial equation of $F$ is $r(r-1)+s(1-s)=0$, hence the solution is $r_1=s$, $r_2=1-s$. 
+   </p>
+
+   <p>
+    In the original equation defining $F(c)$, when $c\rightarrow 0^+$, we have by <a href="https://dlmf.nist.gov/13.14E14">DLMF(13.14.14)</a>:
+    \[M_{\ell,s-\frac 12}\lp\frac{4\pi c}{1+u^2}\rp=(1+O(c))\lp\frac{4\pi c}{1+u^2}\rp^s. \]
+    For $\exp(\frac{cu}{1+u^2})$ we just use $1+O(c)$. Then we get
+    \[
+    \begin{align} 
+    F(c)&=(4\pi c)^s \int_{-\infty}^\infty (1+O(c)) (1+u^2)^{-s} \lp\frac{1-iu}{1+iu}\rp^\ell e(\alpha u) du\\
+    &=(4\pi c)^s \int_{-\infty}^\infty (1-iu)^{-s+\ell} (1+iu)^{-s-\ell} e(\alpha u) du+O(c^{s+1})
+    \end{align} 
+    \]
+    and the integral now depends on $\alpha>0$ or $\alpha< 0$. 
+   </p>
+
+   <p>
+    For $x\geq 0$ and $\re(\beta)+\re(\gamma)>1$, computing the integral
+    \[\int_{-\infty}^\infty (1-iu)^{-\beta} (1+iu)^{-\gamma} e^{iux} du\]
+    goes back to page 353 of Hejhal's book. 
+   </p>
+
+   <p>
+    The contour deformation is a little bit hard for me, so we turn to another reference: [Bateman, Harry, & Bateman Manuscript Project. 1954. <i>Tables of Integral Transforms</i>, volume I. New York: McGraw-Hill Book Company]. In page 119, equation 3.2(12) gives that for $\re(\mu+\nu)>\frac 12$, 
+    \[
+      \int_{-\infty}^\infty (1-ix)^{-2\nu} (1+ix)^{-2\mu}  e^{-ixy} dx=\left\{
+        \begin{array}{ll}
+          2^{1-\nu-\mu}\pi \Gamma(2\nu)^{-1} y^{\nu+\mu-1} W_{\nu-\mu,\frac 12-\nu-\mu}(2y),& y>0;\\
+          2^{1-\nu-\mu}\pi \Gamma(2\mu)^{-1} |y|^{\nu+\mu-1} W_{\mu-\nu,\frac12-\nu-\mu}(2|y|),& y< 0. 
+        \end{array} 
+        \right.
+    \]
+    One may notice that the reference has a $-$ sign when $y>0$. It should be wrong, by testing e.g. $\mu=\nu=\frac12$ and $y=1$ - the result should be $\frac{\pi}{e}$ but not minus. 
+   </p>
+
+   
+
+   <p>
+    So we set $\nu=\frac{s-\ell}2$, $\mu=\frac{s+\ell}2$, $\re(\mu+\nu)=\re(s)>\frac 12$, and $y=-2\pi \alpha$ to get that for $c\rightarrow 0^+$, 
+    \[F(c)=(4\pi c)^s\left\{ \begin{array}{ll}
+          \frac{\pi^{s} |\alpha|^{s-1} }{\Gamma(s-\ell)}  W_{-\ell,s-\frac 12}(4\pi \alpha),& \alpha< 0;\\
+          \frac{\pi^s \alpha^{s-1} }{\Gamma(s+\ell)} W_{\ell,s-\frac 12}(4\pi \alpha),& \alpha>0 ; 
+        \end{array} 
+        \right.\quad +O(c^{s+1}). \]
+        We have used the property that for the $W$-Whittaker function, $W_{\alpha,\beta}=W_{\alpha,-\beta}$. 
+   </p>
+
+   <p>
+    Recall the solution in $J,Y,I,K$ Bessel functions before. By <a href="https://dlmf.nist.gov/10.7">DLMF(10.7)</a> and <a href="https://dlmf.nist.gov/10.30">DLMF(10.30)</a>, when $c\rightarrow 0^+$ it gives $c^{\pm(2s-1)}$. Since we have assumed $\re(s)>\re(1-s)$, i.e. $\re(2s-1)>0$, we shall have $B=B'=0$ (otherwise the exponent of $c$ is $1-s$). 
+   </p>
+
+  
+
+   <p>
+    Since $J_{2s-1}$ and $I_{2s-1}$ both give $(2\pi)^{2s-1}|c\alpha|^{s-\frac 12}\Gamma(2s)^{-1}$, we have the following solution: 
+    \[F(c)=\Gamma(2s)\left\{ \begin{array}{ll}
+          \frac{2\pi}{\Gamma(s-\ell)} \left|\frac c\alpha\right|^{\frac 12} W_{-\ell,s-\frac 12}(4\pi \alpha) I_{2s-1}(4\pi\sqrt{c|\alpha|}),& \alpha< 0;\\
+          \frac{2\pi }{\Gamma(s+\ell)} \left|\frac c\alpha\right|^{\frac 12} W_{\ell,s-\frac 12}(4\pi \alpha) J_{2s-1}(4\pi\sqrt{c\alpha}),& \alpha>0 . 
+        \end{array} 
+        \right.\]
+   </p>
+
+  <h3>4.2. When $\alpha=0$.</h3>
+    <p>
+    The only thing left is for $\alpha =0$. We need to solve
+    \[c^2 F''(c)+s(1-s)F(c)=0. \]
+    This is a second-order Euler-Cauchy equation. One can see <a href="https://mathworld.wolfram.com/EulerDifferentialEquation.html">this Wolfram Mathworld page</a> to solve
+    \[F(c)=Ax^s+Bx^{1-s}. \]
+    Again, the limit argument shows that for $c\rightarrow 0^+$, 
+    \[F(c)=(4\pi c)^s \int_{-\infty}^\infty (1-iu)^{-s+\ell} (1+iu)^{-s-\ell} du+O(c^{s+1}). \]
+    By <a href="https://dlmf.nist.gov/5.12#E8">DLMF(5.12.8)</a>, we get
+    \[F(c)=(4\pi c)^s \frac{2^{2-2s}\pi \Gamma(2s)}{(2s-1)\Gamma(s-\ell)\Gamma(s+\ell)}+O(c^{s+1}). \]
+    This eliminates the possibility of $Bx^{1-s}$ and the main term is exactly $F(c)$. After simplification we have
+    \[F(c)=\frac{4\pi^{1+s}\Gamma(2s)}{(2s-1)\Gamma(s-\ell)\Gamma(s+\ell)} c^s,\quad \text{if }\alpha=0. \]
+   </p>
+
+   <p>We have finished the calculation of $F(c)$. </p>
+
+  <footer class="mt-10 border-t pt-4 text-sm text-gray-500">
+    <div class="flex justify-between w-full">
+      <div>
+        <a href="zagier_1.5_extra.html" class="text-blue-600 hover:underline">← Previous Note</a>
+        <a style="float: right;" href="next-note.html" class="text-blue-600 hover:underline">Next Note →</a>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="mt-2">
+    <a href="../index.html#notes" class="text-blue-600 hover:underline">↩ Back to Notes</a>
+    </div>
+  </footer>
+</body>
+</html>
