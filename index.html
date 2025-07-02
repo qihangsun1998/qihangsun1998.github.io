@@ -81,7 +81,12 @@
 
 <body>
 
-<h1>孙启航 SUN, Qihang's Personal Website</h1>
+<h1 style="display: flex; justify-content: space-between; align-items: center;">
+  孙启航 SUN, Qihang's Personal Website
+  <a href="index_zh.html" style="margin-left: auto; font-size: 14px; padding: 5px 10px; text-decoration: none; border: 1px solid #ccc; border-radius: 4px;">
+    中文
+  </a>
+</h1>
 
 <div class="tabs">
   <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
@@ -104,9 +109,9 @@
 
       <p><a href="files/Qihang_Sun_CV_2025.06.pdf" target="_blank">Here is my CV</a>.</p>
 
-      <p>My email: qihangsun98 at outlook dot com.</p>
+      <p>My email: qihangsun98 [at] outlook [dot] com.</p>
 
-      <p><b>Research interest</b>: 
+      <p><b>Research interest:</b></p>
         <ol style="list-style-type:disc;">
           <li>Partitions and related analytic properties</li>
           <li>Kloosterman sums</li>
@@ -114,12 +119,12 @@
           <li>Sphere packing</li>
           <li>...</li>
         </ol>
-      </p>
+     
 
       <p>Useful links: <a href="https://orcid.org/0009-0008-5747-6807">My ORCID</a>, <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1604065">MathSciNet</a>, <a href="https://zbmath.org/authors/sun.qihang">zbMath</a>, <a href="https://sites.google.com/view/sunqihang/">Google site</a>, <a href="https://scholar.google.com/citations?user=15Rr24IAAAAJ">Google scholar</a>.</p>
     </div>
 
-    <div class="profile-photo">
+    <div>
         <img src="files/profile.jpg" alt="Profile photo" class="profile-photo"/>
     </div>
   </div>
@@ -191,7 +196,7 @@
     <li><b>Exact formulae for ranks of partitions</b>. Universität zu Köln, Germany. <i>Number Theory Seminar</i>. Oct. 7, 2024.</li>
     <li><b>Exact formulae for ranks of partitions</b>. Centre international de rencontres mathématiques (CIRM), Marseille, France. <i>Building Bridges: 6th EU/US Summer School  & Workshop on Automorphic Forms and Related Topics (BB6). École et Atelier sur les formes automorphes et interactions</i>. Sept. 10, 2024. </li>
     <li><b>Speed talk: exact formulas for rank of partitions</b>. Universität zu Köln, Germany. <i>International Conference on Modular Forms and q-Series</i>. Mar. 12, 2024. </li>
-    <li><b>Lightening talk: exact formulas for rank of partitions</b>. Tulane University, USA. <i>Annual Clifford Lectures</i>. Feb. 25, 2023.</li>
+    <li><b>Lightning talk: exact formulas for rank of partitions</b>. Tulane University, USA. <i>Annual Clifford Lectures</i>. Feb. 25, 2023.</li>
     <li><b>Asymptotics in partitions: circle method and Kloosterman sums</b>. UIUC. <i>Number Theory Seminar</i>. Oct. 17, 2023. </li>
     <li><b>Integer partitions and Kloosterman sums</b>. UIUC. <i>Graduate Number Theory Seminar</i>. Oct. 12, 2023.</li>
     <li><b>Sums of Kloosterman sums with applications to partitions</b>. XJTU, Xi'an, China. <i>Number Theory Seminar</i>. Jul. 21, 2023. </li>
@@ -205,7 +210,7 @@
 
 <div id="notes" class="tab-content">
   <h2 class="text-xl font-bold mb-4">My Math Notes</h2>
-  <h3 class="text-xl font-bold mb-4">Classical Automorphic Forms</h2>
+  <h3 class="text-xl font-bold mb-4">Classical Automorphic Forms</h3>
   <ol>
     <li>
       <a href="notes/multiplier_system.html" class="text-blue-600 hover:underline" target="_blank">Multiplier system</a>
@@ -215,13 +220,16 @@
     </li>
   </ol>
 
-  <h3 class="text-xl font-bold mb-4">Weak Maass Form, Harmonic Maass Form, etc. </h2>
+  <h3 class="text-xl font-bold mb-4">Weak Maass Form, Harmonic Maass Form, etc. </h3>
     <ol>
       <li>
         <a href="notes/zagier_1.5_extra.html" class="text-blue-600 hover:underline" target="_blank">An extra transformation formula for Zagier's weight 3/2 harmonic Maass form (Fricke involution)</a>
       </li>
+      <li>
+        <a href="notes/hejhal_int.html">A modern proof of an integral formula by Hejhal</a>
+      </li>
     </ol>
-  <h3 class="text-xl font-bold mb-4">Pari/GP study</h2>
+  <h3 class="text-xl font-bold mb-4">Pari/GP study</h3>
     <ol>
       <li>
         <a href="https://pari.math.u-bordeaux.fr/" class="text-blue-600 hover:underline" target="_blank">Pari/GP official website</a>
