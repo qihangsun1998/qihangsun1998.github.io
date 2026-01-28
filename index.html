@@ -84,10 +84,20 @@
  
 
 </style>
-<script 
-  defer src="https://cloud.umami.is/script.js" 
-  data-website-id="6ffcfe2e-7e75-4044-8742-0ff6721b36ad">
+
+
+
+<script>
+  // 简单判断：如果是自动化测试工具(webdriver)，则不加载 Umami
+  if (!navigator.webdriver) {
+    var script = document.createElement('script');
+    script.defer = true;
+    script.src = "https://cloud.umami.is/script.js";
+    script.setAttribute('data-website-id', '6ffcfe2e-7e75-4044-8742-0ff6721b36ad');
+    document.head.appendChild(script);
+  }
 </script>
+
 
 </head>
 
