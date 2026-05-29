@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>On real-variable Kloosterman sums (1)</title>
+  <style>
+    body {
+      font-family: Arial, FangSong_GB2312, 'Microsoft YaHei', sans-serif;
+      background-color: #f3dfc1;
+      margin: 0px 20px 60px 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    ol {
+      margin-top: 0;
+    }
+    ol.paren-list {
+      list-style-type: none;        /* Remove default numbers */
+      padding-left: 1.5em;          /* Create space for custom markers */
+      counter-reset: item;          /* Initialize counter */
+    }
+
+    ol.paren-list > li {
+      counter-increment: item;      /* Increment counter per li */
+      position: relative;           /* Needed for ::before positioning */
+      padding-left: 2.5em;          /* add padding to push text right */
+    }
+
+    ol.paren-list > li::before {
+      content: "(" counter(item) ") "; /* Insert (1), (2), etc */
+      position: absolute;
+      left: 0;
+      width: 2em;          /* reserve space */
+      text-align: right;   /* align number right inside this width */
+    }
+
+  </style>
+
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        macros: {
+          R: "\\mathbb{R}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          N: "\\mathbb{N}",
+          H: "\\mathbb{H}",
+          C: "\\mathbb{C}",
+          SL: "\\mathrm{SL}",
+          GL: "\\mathrm{GL}",
+          re: "\\mathrm{Re\\,}",
+          im: "\\mathrm{Im\\,}",
+          ma: "\\mathfrak{a}",
+          mb: "\\mathfrak{b}",
+          Mod: ["\\;\\left(\\mathrm{mod}\\;#1\\right)", 1],
+          lp: "\\left(",
+          rp: "\\right)",
+          lb: "\\left\\{",
+          rb: "\\right\\}"
+        }
+      }
+    };
+  </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+  <h1>On real-variable Kloosterman sums (1)</h1>
+  <p>2025/11/01</p>
+
+  <p>Heuristically, this is about simple understandings of real-variable Kloosterman sums from my research [6]. 
+    This article is not intended to give rigorous proofs but just some directions. 
+  </p>
+
+    <p>
+        We still use the notation $q=e(z)=e^{2\pi i z}$. 
+        When defining Poincar&eacute; series or Maass-Poincar&eacute; series, we use the coset $\Gamma_\infty \setminus \Gamma$. 
+        Usually it doesn't matter for the choice of coset representation, but now since our seed function 
+        $e(r^2 z/2)$, $\varphi_{s,k}(r^2 z/2)$ are not periodic for $z\rightarrow z+2$, 
+        we need to restrict the coset representation to be: 
+        \[\gamma\in \Gamma \text{ such that } \gamma \mathcal{F} \subseteq [-1,1]\times i[0,\infty).\]
+    </p>
+
+    <p>
+        This is the idea from (<i>Martin Stoller. Fourier interpolation from spheres, Trans. Amer. Math. Soc. 374, 2021</i>). Currently we have the easy case: $\Gamma=\Gamma(2)$, 
+        and the coset representation directly corresponding to the restriction $\gamma=\begin{pmatrix} a&b\\c&d \end{pmatrix}$ with $|a|<|c|$, $|b|<|d|$. 
+        We may follow this kind of definition for the other congruence subgroups, while they may not be that clear. 
+        For example, for $\Gamma(1)$ we need some extra work.
+    </p>
+
+    <p>
+        Anyway, in $\Gamma(2)$ we can define the real-variable Kloosterman sums in a clear way. We always focus on $c>0$. 
+        We use $S$ to indicate that this is the (classical) Kloosterman sum, and use $K$ to indication that this allows real variable. 
+        \[\text{if }2|c,\quad  K(r,n,c,\nu_{\Theta}^{2k} ) =\sum_{\substack{-c < a < c \\ d\pmod {2c}^*\\ad\equiv 1(2c) }} \varepsilon_d^{2k} (\tfrac{2c}d)^{2k} e\lp \frac{ra+nd}{2c}\rp, \]
+        \[\text{if }2\nmid \tilde{c},\quad  K(r,n,\tilde{c},\nu_{\Theta}^{2k} ) =\sum_{\substack{-b < d < b \\ 2|a \pmod{2\tilde{c}},\, 2|d\\ ad\equiv 1(\tilde{c})}} e(\tfrac k4) \varepsilon_{\tilde{c}}^{-2k} (\tfrac{2d}{\tilde{c}})^{2k} e\lp \frac{ra+nd}{2\tilde{c}}\rp. \]
+    </p>
+
+    <p>Here are some observations we made, where we only write the series for $K(r^2,n,c,\nu_\Theta^{2k})$ but the conclusion is similar for $K(r^2,n,\tilde{c},\nu_\Theta^{2k})$. </p>
+
+    <p>(1) For weight $k=2$. </p>
+    
+    <p>(1.1) When $n\neq 0$, the following series converge for $s=1$ and have good tail estimates: 
+    \[\sum_{2|c>0}\frac{K(r^2,n,c,\nu_\Theta^4)}{c}J_{2s-1}\left(\frac{2\pi|r^2n|^{\frac 12}}{c}\right),\quad \sum_{2|c>0}\frac{K(r^2,n,c,\nu_\Theta^4)}{c}I_{2s-1}\left(\frac{2\pi|r^2n|^{\frac 12}}{c}\right). \]
+    </p>
+
+    <p>(1.2) When $n=0$, the following series has a pole when $s\to 1$ with residue
+    \[\operatorname*{Res}_{s=1} \sum_{2|c>0}\frac{K(r^2,0,c,\nu_\Theta^4)}{c^{2s}}=\frac{2\sin(\pi r^2)}{\pi^3r^2}. \]
+    </p>
+
+    <p>(2) For weight $k=3/2$. </p>
+
+    <p>(2.1) When $n\neq -m^2$ for any $m\in \mathbb Z$, the following series converge for $s\in[3/4,1]$ and have good tail estimates: 
+    \[\sum_{2|c>0}\frac{K(r^2,n,c,\nu_\Theta^3)}{c}J_{2s}\left(\frac{2\pi|r^2n|^{\frac 12}}{c}\right) \]
+    </p>
+
+    <p>(2.2) When $n=0$, the following series has a pole when $s\to 3/4$ with residue
+      \[\operatorname*{Res}_{s=3/4} \sum_{2|c>0}\frac{K(r^2,0,c,\nu_\Theta^3)}{c^{2s}}=e(-\tfrac 18)\frac{\sin(\pi r^2)}{\pi^2r \sinh(\pi r)}. \]
+    </p>
+
+    <p>(2.3) When $n=-m^2$ for some $m\in \mathbb Z$, $m\geq 1$, the following series has a pole when $s\to 3/4$ with residue
+      \[\operatorname*{Res}_{s=3/4} \sum_{2|c>0}\frac{K(r^2,-m^2,c,\nu_\Theta^3)}{c}I_{2s-1}\left(\frac{2\pi|r^2n|^{\frac 12}}{c}\right)=e(-\tfrac 18)\frac{4|rm|^{\frac 12} \sin(\pi r^2)}{\pi^2r \sinh(\pi r)}. \]
+    </p>
+
+    <p>Let $\Theta(z)=\sum_{n\in \mathbb Z} e^{\pi i n^2 z}=\sum_{m=0}^\infty r_1(m) e^{\pi i m z}$. The reason for the residues in part (2) is because
+      \[\sum_{m=0}^\infty \frac{(-1)^m \,r_1(m)}{r^2+m}=\frac 1{r^2}+\sum_{m=1}^\infty \frac{2(-1)^m}{r^2+m^2}=\frac{\pi }{r\sinh(\pi r)}\quad (r>0).  \]
+    </p>
+
+    <p>We end with three questions: </p>
+
+    <p>
+      (Q1) Clearly, the residues and convergence are related to the coefficients of $\Theta^{4-2k}$ for $k=2,3/2$. Why?
+    </p>
+
+    <p>
+      (Q2) How do we deal with the case $k=0,1/2$ where $s\to 0,1/4$? The analytic continuation of these real-variable Kloosterman sums will be interesting. Moreover, for the central point, how do we deal with $k=1$ and $s\to 1/2$? 
+    </p>
+
+    <p>
+      (Q3) Why $\Gamma_\Theta$ and $\Gamma(2)$ are special here? What's the reasonable generalization for other congruence subgroups, and what will be the requirement for the sum on $a$ then? 
+    </p>
+
+    <p>Please contact me if you are interested and have any ideas. </p>
+
+  <footer class="mt-10 border-t pt-4 text-sm text-gray-500">
+    <div class="mt-2">
+    <a href="../index.html#notes" class="text-blue-600 hover:underline">↩ Back to Notes</a>
+    </div>
+  </footer>
+</body>
+</html>
