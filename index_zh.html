@@ -82,7 +82,9 @@
     border-radius: 20px;
   }
  
-
+  #notes li > ul {
+    margin-top: 0.5rem;
+  }
 </style>
 
 <script>
@@ -121,31 +123,27 @@
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
     
     <div style="flex: 1; min-width: 300px;">
-      <p>我是法国国家科学研究中心（CNRS）的博士后，合作导师是 <a href="https://www.danrad.net/">Danylo Radchenko</a> 博士。2026年3月起，我们在法国高等科学研究所（IHES）工作。在此之前（2024/09 &ndash; 2026/02），我们在里尔大学 Paul Painlevé 实验室（数学系）工作。</p>
+      <p>我是法国国家科学研究中心（CNRS）的博士后，合作导师是 <a href="https://www.danrad.net/">Danylo Radchenko</a> 博士。</p>
+      
+      <p>2026年3月起，我们在法国高等科学研究所（IHES）工作。在此之前（2024/09 &ndash; 2026/02），我们在里尔大学 Paul Painlevé 实验室（数学系）工作。</p>
 
       <p>2024年5月，我于美国伊利诺伊大学香槟分校（UIUC）获得数学博士学位。我的博士导师是 <a href="https://scottahlgren.web.illinois.edu/">Scott Ahlgren</a> 先生。</p>
 
       <p>2019年6月，我本科毕业于西安交通大学数学试验班，获得理学学士学位。我的本科毕业设计指导老师是<a href="https://gr.xjtu.edu.cn/web/jjx323">贾骏雄</a>教授。我于2013年9月作为少年班学生入学。</p>
 
-      <p>这里是我的<a href="files/孙启航中文简历_2026.02.pdf">中文简历</a> / <a href="files/Qihang_Sun_CV_2026.02.pdf" target="_blank">英文简历</a>。&nbsp;|&nbsp; <b>邮箱：</b>qihangsun98 [at] outlook [dot] com.</p>
+      <p>这里是我的<a href="files/孙启航中文简历_2026.05.pdf">中文简历</a> / <a href="files/Qihang_Sun_CV_2026.05.pdf" target="_blank">英文简历</a>。&nbsp;|&nbsp; <b>邮箱：</b>qihangsun98 [at] outlook [dot] com.</p>
 
       <p><b>研究兴趣：</b></p>
         <ol style="list-style-type:disc;">
-          <li>整数分拆函数及其解析性质</li>
           <li>Kloosterman 和</li>
-          <li>自守形式</li>
-          <li>球密堆积问题</li>
+          <li>古典模形式和Maass形式</li>
+          <li>整数分拆函数及其解析性质</li>
+          <li>傅里叶插值和球密堆积问题</li>
           <li>……</li>
         </ol>
      
 
       <p>其他链接：<a href="https://orcid.org/0009-0008-5747-6807">ORCID</a>, <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1604065">MathSciNet</a>, <a href="https://zbmath.org/authors/sun.qihang">zbMath</a>, <a href="https://sites.google.com/view/sunqihang/">Google site</a>, <a href="https://scholar.google.com/citations?user=15Rr24IAAAAJ">Google scholar</a>.</p>
-      <p>学术访问： 
-        <ol style="list-style-type:disc;">
-          <li>中国科学院晨兴数学中心，访问学生。2022/04 &ndash; 2022/06</li>
-          <li>美国，佐治亚理工学院，本科生交流项目。2018/01 &ndash; 2018/05</li>
-        </ol>
-      </p>
     </div>
 
     <div>
@@ -226,7 +224,7 @@
   <h2>受邀报告</h2>
   <ol style="list-style-type: disc;">
     <li>Rademacher-type exact formulas for rank of partitions with a new proof of Ramanujan congruences.<br>
-      美国，密歇根理工大学：整数分拆理论、<i>q</i>-级数和相关专题讨论班。2026/03/03
+      美国，密歇根理工大学：整数分拆理论、<i>q</i>-级数和相关专题讨论班。 [<a href="https://pages.mtu.edu/~wjkeith/PartitionsSpecialtySeminar/Mar3-2026-QihangSun.mp4" target="_blank">视频</a>] 2026/03/03
     </li>
 
     <li>Integer partition, Kloosterman sums, and further applications. <br>
@@ -296,34 +294,66 @@
 
 <div id="notes" class="tab-content">
   <h2 class="text-xl font-bold mb-4">我的数学笔记</h2>
-  <h3 class="text-xl font-bold mb-4">知乎笔记：<a href="https://www.zhihu.com/people/sunqihang98" class="text-blue-600 hover:underline" target="_blank">应襄</a>
-  </h3>
-  <h3 class="text-xl font-bold mb-4">古典自守形式</h3>
-  <ol>
+  <p>
+  如果这些笔记对您有帮助，或者您发现了任何错误、疏漏，欢迎与我联系。
+  </p>
+  <ol class="list-decimal ml-6" start="0">
+
+    <li>知乎笔记：<a href="https://www.zhihu.com/people/sunqihang98" class="text-blue-600 hover:underline" target="_blank">应襄</a></li>
     <li>
-      <a href="notes/multiplier_system.html" class="text-blue-600 hover:underline" target="_blank">Multiplier system</a>
+      古典自守形式
+      <ul class="list-decimal ml-6">
+        <li>
+          <a href="notes/multiplier_system.html" class="text-blue-600 hover:underline" target="_blank">Multiplier system </a>
+        </li>
+        <li>
+          <a href="notes/poincare_series.html" class="text-blue-600 hover:underline" target="_blank"> Poincaré series </a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="notes/poincare_series.html" class="text-blue-600 hover:underline" target="_blank">Poincar&eacute; series</a>
+
+    <li>弱 Maass 形式、调和 Maass 形式等
+      <ul class="list-decimal ml-6">
+        <li>
+          <a href="notes/zagier_1.5_extra.html" 
+             class="text-blue-600 hover:underline" target="_blank">
+             An extra transformation formula for Zagier's weight 3/2 harmonic Maass form
+          </a>
+        </li>
+        <li>
+          <a href="notes/hejhal_int.html" target="_blank">
+             A modern proof of an integral formula by Hejhal
+          </a>
+        </li>
+      </ul>
     </li>
+
+    <li>实变量Kloosterman和
+      <ul class="list-decimal ml-6">
+        <li>
+          <a href="notes/real_val_KL_sum_1.html" 
+             class="text-blue-600 hover:underline" target="_blank">
+             On real-variable Kloosterman sums (1)
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li><a href="https://pari.math.u-bordeaux.fr/" target="_blank">Pari/GP</a> 学习
+      <ul class="list-decimal ml-6">
+        <li>
+          <a href="notes/parigp_study_1.html" 
+             class="text-blue-600 hover:underline" target="_blank">
+             Notation, defining function, .gp file
+          </a>
+        </li>
+      </ul>
+    </li>
+
   </ol>
 
-  <h3 class="text-xl font-bold mb-4">弱 Maass 形式、调和 Maass 形式等 </h3>
-    <ol start="3">
-      <li>
-        <a href="notes/zagier_1.5_extra.html" class="text-blue-600 hover:underline" target="_blank">An extra transformation formula for Zagier's weight 3/2 harmonic Maass form (Fricke involution)</a>
-      </li>
-      <li>
-        <a href="notes/hejhal_int.html">A modern proof of an integral formula by Hejhal</a>
-      </li>
-    </ol>
-  <h3 class="text-xl font-bold mb-4"><a href="notes/parigp_study_1.html">Pari/GP</a> 学习</h3>
-    <ol start="5">
-      <li>
-         <a class="text-blue-600 hover:underline" target="_blank">Notation, defining function, .gp file</a>
-      </li>
-    </ol>
 </div>
+
 
 
 <div id="teaching" class="tab-content">
